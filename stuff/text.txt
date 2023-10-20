@@ -1,0 +1,3 @@
+This is a text file stored in the Toybox stuff/ directory. It uses item type 0,
+so the Gopher client displays it as text.
+

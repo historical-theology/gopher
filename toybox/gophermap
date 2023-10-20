@@ -1,0 +1,55 @@
+1Floodgap Systems gopher root	/	gopher.floodgap.com	70
+
+<- 67 chars ------------------------------------------------------>
+Welcome to the Toybox, a sample set of gophermaps so you can see
+how to create your own. This simple set demonstrates external
+links, informational text lines, and local files and directories.
+Open this up in another window so you can compare:
+0Toybox: See the contents of the Toybox gophermap	gophermap
+This works with Bucktooth (and SDF), pygopherd, and any server
+compatible with the gophermap menu format.
+
+The 67 character display string length is a suggestion for
+compatibility with older clients.
+These lines have no tabs in them, so they are shown as text.
+
+<- 67 chars ------------------------------------------------------>
+These lines have tabs, so they are links (to a local directory):
+1Toybox: See the contents of the stuff/ directory	stuff
+(since the stuff/ directory has no gophermap, it's simply listed)
+0Toybox: Link to a text file in the stuff/ directory	stuff/text.txt
+gToybox: Link to a GIF file in the stuff/ directory	stuff/floodgap.gif
+9Toybox: Link to the entire contents of toybox/	../toybox.zip
+(This is actually a copy of the entire toybox/ directory!)
+
+The tab separates the display string and the selector (path). If
+you don't use a full path, then it is relative to this one.
+
+The item type tells the gopher client what that menu item is. It is
+always the first character in a line with tabs. These item types
+here were 1 (a menu), 0 (a text file), g (a GIF image) and 9 (a
+generic downloadable binary).
+Other item types include I = generic image or JPEG.
+
+<- 67 chars ------------------------------------------------------>
+If you just use a display string and a selector, then your host name
+and port are filled in. If you add a host and port, then it becomes
+an external link like these:
+
+Add a search engine link! This is external. Item type 7 means a
+server you can send a request to.
+7Search Veronica-2	/v2/vs	gopher.floodgap.com	70
+Add links to other gopherspaces! Use item type 1 for a gopher menu
+otherwise.
+1gopher.floodgap.com	/	gopher.floodgap.com	70
+1gopher.quux.org	/	gopher.quux.org	70
+Add links to web pages! Use item type h and a URL: (a "hURL").
+Don't use a host and port; that's part of the URL already.
+hA web link to www.floodgap.com	URL:http://www.floodgap.com/
+
+<- 67 chars ------------------------------------------------------>
+Download the Toybox yourself so you can play with it.
+9Toybox: Link to the entire contents of toybox/	../toybox.zip
+
+<- 67 chars ------------------------------------------------------>
+Send comments and suggestions on this tutorial to gopher@floodgap.com
