@@ -1,0 +1,56 @@
+Computer Science & Information Technology
+
+For the duration of the year 2021, I was part of a competitive 
+InfoSec networking and cybersecurity training grant cohort with
+ the Center for Cyber Security Awareness and Cyber Defense at 
+ Marquette University as the only accepted member who was not a 
+ graduate student in the Computer Science Department.
+ 
+I am a proud advocate of free and open source software (FOSS), 
+especially its implementation in academia. To that end, 
+I have written articles for the FreeBSD Journal, 
+contributed to the FreeBSD Wiki, 
+and given various presentations about topics related to 
+software freedom. 
+
+Three noteworthy presentations of the kind are 
+the talk that I delivered at the 2021 Free and Open Source 
+Developers European Meeting (FOSDEM) on how to optimize 
+multisource historical research with tiling window managers, 
+my October 2021 FreeBSD Friday lecture 
+“The Writing Scholar’s Guide to FreeBSD,” 
+and my lecture at BSD Canada 2023 (BSDCan) that was titled 
+“BSD for Researching, Writing, and Teaching the Liberal Arts.”
+
+I maintain a custom desktop configuration, which I call 
+“Theological Dotfiles,” for efficient multi-source research and 
+writing in *BSD or GNU/Linux. I love computer building, and I 
+used to use a home-built desktop computer for most of my work. 
+After making a recent cross-country move, however, 
+before which it made the most sense for me to sell my desktop 
+computer hardware, I now use a docked ThinkPad T590 while at my 
+desk and a freestanding ThinkPad X270 while away from my desk. 
+See this blog post [/stuff/blog/openbsd-thinkpad] for a guide to 
+how I have OpenBSD configured on the X270.
+
+I have multi-year experience with Unix-like operating systems, 
+including FreeBSD, OpenBSD, and GNU/Linux 
+(especially Debian and Manjaro), as well as some shell scripting. 
+I also have strong familiarity with Zotero, LibreOffice, and 
+other office software; spectrwm, i3wm, Openbox, and other 
+window managers; XFCE, LXQt, and other desktop environments; 
+and a range of other open source tools for desktop work.
+
+In each of 10 summers, I lead and co-taught 
+Build Your Own Computer Camp for middle school students 
+at my alma mater, Marshall School in Duluth, Minnesota.
+
+My amateur radio (vanity) callsign is N7CJS.
+
+Also see my GitHub profile (github.com/historical-theology), 
+stand-alone publication record (/stuff/publications), 
+and blog (/stuff/blog/).
+
+Updated on November 7, 2023.
+
+Copyright 2023 Corey Stephan, Ph.D.

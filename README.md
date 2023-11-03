@@ -1,5 +1,7 @@
-This is a Gopher Hole version of my professional website, coreystephan.com, which one can find at gopher://coreystephan.duckdns.org/
+This is a gopher hole that contains most of the same contents as  my professional website (coreystephan.com). You may find it at 
 
-Chiefly, hosting the Gopher Hole is a hobby exercise. coreystephan.com remains the source of truth. Yet, I have no qualm with anyone reading the same content in my Gopher Hole.
+gopher://coreystephan.duckdns.org/
 
-Hosted on a Raspberry Pi 4 running FreeBSD 14 via Gophernicus
+Chiefly, hosting the gopher hole is a hobby exercise. coreystephan.com remains the source of truth. Yet, I have no qualm with anyone reading the same content in my gopher hole.
+
+Hosted via Gophernicus (gophernicus.org) on a Raspberry Pi 4 (raspberrypi.org) running FreeBSD 14 (freebsd.org)
