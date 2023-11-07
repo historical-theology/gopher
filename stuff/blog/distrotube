@@ -1,0 +1,963 @@
+DistroTube’s Interview “Theology Professor and Free Software
+Advocate, Corey Stephan Ph.D.”
+
+January 17, 2023
+Corey Stephan
+
+On October 21, 2022, I had the privilege of being interviewed by
+Derek Taylor of DistroTube about my advocacy and use of free and
+open source software as a professional Catholic theologian. Here,
+I share a full transcript of that interview.
+
+Theology Professor and Free Software Advocate, Corey Stephan
+Ph.D.
+
+https://odysee.com/@DistroTube:2/theology-professor-and-free-software:b?src=embed
+
+DT: Today, I’m sitting down with a very interesting guest, because
+this guest is not a Linux Distro maintainer, is not a programmer
+or developer by trade. Today, I’m going to talk to a theology
+professor who has a real love for free and open source software
+and is a strong advocate for free and open source software. And
+I’m talking to Corey Stephan. Professor Stephan, please introduce
+yourself.
+
+CS: Yes, thank you for that great introduction. So, I’m really
+pleased to be on DistroTube. I’ve been a fan of this channel for
+years, since back in the Obscure Window Manager Project days,
+before DT got all of his fancy equipment at all of that. So, I’ve
+really learned a lot from it. So, anyway, as you said, my name is
+Dr. Corey Stephan. “Corey” for a good old Derek here. And I
+currently serve as Assistant Professor of Theology and Fellow of
+the Core at the University of St. Thomas in Houston, Texas. So,
+I’m a Catholic historical theologian professionally and by
+education. But I also, and together with that, do some advocacy
+for free and open source software. I’ve given a talk for the
+FreeBSD Foundation. I’ve written a couple of articles for the
+FreeBSD Journal. I’ve given a talk for the Free and Open Source
+Developers’ European meeting, FOSDEM. I blog about this stuff. And
+perhaps most directly related to my work, I always tell my boss
+that we should be using free software [laugh], and I have a
+Statement on Software Freedom at the end of all of my class
+syllabi, where I promise my students that I will work to ensure
+that they’re able to have software freedom as much as reasonably
+possible within the context of being at the university within my
+classes. So, that’s a bit about me.
+
+DT: Wow. People say I’m a free software zealot, but you are the
+real die hard here. [Laugh]. Well, how did you get into Linux and
+BSD, free and open source software? How did you discover that
+philosophy?
+
+CS: Oh, thank you. Yeah, that’s a great question. So, when I was a
+freshman or sophomore in high school in the Ubuntu 8[.04] days, I
+had my first laptop computer, and it was slow. It had, I think 500
+megabytes of RAM, which to the greybeards will sound like, well,
+that’s rather a lot, but, you know, even for that time, that was
+quite low. The standard was two or four [GB].
+
+DT: Yeah, it was, because I also had a machine during the Ubuntu
+8.04 time, and I was running 512 megabytes. And even then, web
+browsers would just run at a snail’s pace, yeah.
+
+CS: Exactly. So, it came with Microsoft Winblows – Windows –
+[laughs] did I almost say something crude?
+
+DT: I’ll censor that out. Nah, I’ll leave it in. Go ahead.
+
+CS: It came with Microsoft Windows, and I was looking for
+something better, something that would be more efficient,
+something that had a lot more customizability also with regard to
+workflow, because even then I did not like being limited in how I
+set up my working environment. I was only doing high school work
+things, but I didn’t like being limited. And I did what any
+millennial does when you want to find an answer to something with
+regard to computers. I think I was still using Google in those
+days.
+
+DT: And it’s interesting. Yeah, the 2008 period was a real
+explosion in Linux desktop popularity back then, because that was
+the Vista days, where people that were using XP and loved XP
+really hated Vista. So, lot of people started –
+
+CS: Oh, that’s right. It was Vista. And so I found Ubuntu, and it
+was on GNOME 2 then. And oh my goodness, did I ever fall in love
+with it!
+
+DT: And with the Comp pills, desktop or the effects. Yeah, that
+was great.
+
+CS: And then you know, I went back and forth with different
+things. I was a Mac guy for several years, but basically, Macs
+became worse and worse over time, too. And once again, I found
+myself dissatisfied, and I went: Wait a second, I have all this
+background. I already did some of this legwork in high school, and
+so let me pick this up again. And that’s how I found DistroTube,
+and that’s how I found RoboNuggie‘s FreeBSD channel. And just kind
+of bit by bit, I grew, all self-taught, and I went from zero to
+hero. So, I went from, you know, using Manjaro GNOME edition to
+using a combination of having read every word on every page of
+Michael Lucas’s glorious Absolute FreeBSD. Great book, by the way,
+for anyone interested in UNIX-like OSes at all. It makes you
+better at Linux and better at everything to do with this stuff.
+And a combination of that and Derek’s videos, especially those
+about spectrwm and window manager configurations and things like
+that. And I wrote my own dot files from scratch. I call them
+“theological-dots.” They’re on GitHub and in the FAQ. I have a
+little imaginary FAQ, of course, nobody’s asking me questions
+about this. I did get an email or two about them, but I have an
+imaginary FAQ. And one of the questions is: “Why are these called
+theological dots?” And I make a little joke, you know. Well,
+they’re not blessed by a priest or something. It’s just, I’m a
+theologian who uses my dot files for efficient research and
+writing. And it’s great, you know, because […] things like having
+a database of ancient Greek texts and a Bible study tool with six
+texts open in parallel, Zotero for reference management,
+LibreOffice with a bunch of extensions. The best of those
+definitely is this little known but really powerful ancient Greek
+extension for LibreOffice. It does spell checking even on
+Byzantine Greek that’s quite accurate. It’s amazing. And so I can
+have all this stuff open in parallel all, you know, tiled for me,
+and it’s just wonderful. And so, I just love exploring things,
+too. I think that’s probably a trait that just about all scholars
+share in common is, you know, we’re nerds, and […] I was just
+telling my students yesterday: How do you know that the kid who’s
+going to become a scholar? It’s the 4, 5, 6 year old who won’t
+stop asking his mother and then his teacher, why, why, why?
+
+DT: Right.
+
+CS: And so that was me, and it still is me.
+
+DT: Yeah. I would say that’s very similar to my path as far as
+timeframe and some of the reasons behind why I got into Linux, and
+a lot of this stuff is really just to learn. It’s just, I was
+interested in it, and I wanted to explore it. It wasn’t
+necessarily out of necessity. I wouldn’t say, you know, I had to
+move to Linux. It was more of, I just wanted to explore this
+avenue, and the more you go down it, it’s just such a deep rabbit
+hole. You’ll never learn everything. Like, it’s impossible to
+learn everything.
+
+CS: It really is impossible to learn everything.
+
+DT: Getting back to your work at the University. I know one of the
+big reasons why you advocate so strongly for free and open source
+software is because you want to really champion privacy,
+especially for your students because these days here in the U.S.,
+especially in the schools and universities, more and more – really
+ever since the lockdown, but even before the lockdown started –
+these schools are forcing their students to use proprietary
+software – proprietary spyware, in many cases – where students
+have to keep a camera and a microphone on them all the time, even
+when they’re doing their schoolwork at home. And, of course,
+there’s some serious privacy concerns related to that. And not to
+mention proprietary software, when you force kids to buy into one
+particular piece of closed source proprietary software, you don’t
+necessarily know what that company is doing with this information,
+because they’re also getting the video feed and the audio feed
+from your students. What’s happening with that information? No one
+knows. So, you want to speak a little bit on that?
+
+CS: Oh, that’s exactly right. So actually, a blog post I wrote
+early in the days of the COVID 19 pandemic, part of it was writing
+about this problem, and it’s, you know, instructors at colleges
+and universities found themselves saying: Oh, well, I’ve never
+done any kind of remote testing before, and so I’m just going to
+default to using something like a lockdown browser – where, you
+know, you’re letting your computer system be hijacked by
+proprietary code, and there are people monitoring your every move,
+even if you are pupils in your eyes dart one way because you’re
+thinking. Well, there are all kinds of problems with this. I mean,
+of course, it’s running proprietary code. You don’t know anything
+about it. Hijacking a person’s private computer running on their
+own home private internet connection –
+
+DT: Who wrote the Chrome extension that these kids had to install?
+I mean, that’s another thing. The universities, they don’t even
+think about that stuff.
+
+CS: It’s not equitable. So, I actually recently had a student
+write to me in confidence to say, Dr. Stephan, I’m really glad
+that you’re doing this, because I have a sibling who has autism,
+and he’s always flagged by remote testing services as a cheater
+because he can’t keep his eyes focused in one direction. And I’m
+going, well, how is that, that’s not even remotely, pun intended,
+fair. I mean, that’s absurd. I mean, he should, you know, he or
+she should be able to have the same educational experience as
+everyone else is having, and that shouldn’t matter. And so there
+are lots of alternatives for remote testing […] Essay writing
+always works. And something that I really like to do is have a
+face-to-face video chat, oral exam, kind of like this, and just
+have it be very welcoming. You can have your notes open. I don’t
+want to see your bedroom. I just want to talk to you. And students
+really thrive doing that. And they appreciate that. I’m not saying
+I’m going to be, you know, they appreciate that I specifically
+say, “I’m not going to be taking over your systems.”
+
+DT: But oral examinations require the teacher to work a little
+harder. And I think in some cases, that’s part of the problem is
+just the school system’s trying to be economic as far as their
+time, you know, unfortunately.
+
+CS: No, that’s exactly right. So, the University of St. Thomas is
+a small liberal arts college, and so I’m blessed that I don’t have
+hundreds and hundreds of students. I might have a hundred or, you
+know, total or something like that. So, it’s hard to schedule all
+that, but I’m able to do so. Yeah, a full professor at a big state
+university who has, you know, 2000 students in, you know, three
+conglomerate lecture halls, well, that person’s not going to be
+going to be able to do one-on-ones with every student. But there
+are still ways of, you know, where you don’t have to be –
+
+DT: Well, I even think at the really big institutions, you could
+have enough graduate assistance also to give some of these oral
+examinations, where it could … I don’t know. It’s tricky, right?
+It’ll be a tough problem to solve. But I do think having a camera,
+having to be on a person in their home is also a tricky situation.
+I know technically they’re at school, but in real life, they’re at
+home. And we’ve had court cases here in the U.S. here recently,
+especially involving the workplace where companies have fired
+people from working at home because they refuse to put on a camera
+on them while they were working at home, because for privacy
+reasons, they’re like, no, I’m not turning on the camera while I’m
+in my house. And companies have fired these people and courts have
+ruled in favor of these people that got fired, saying, no, you
+can’t force your employees to have this camera on in their house.
+
+CS: No, that’s exactly right. And I’ve heard of cases where
+companies are hiring, say, from Silicon Valley who are doing this.
+And I can, wow, can I ever commiserate with that! Because, of
+course, software development is, you know, its nine parts planning
+and one part executing. And it’s the exact same for me as a
+historical theologian. It’s nine parts gathering all of my
+resources, reading them, taking notes on them, and one part
+writing. And so, if I had somebody, you know, spying on me while
+I’m working and saying, oh, you haven’t typed a single word in the
+last three hours, well, that would be very damaging, because I
+might not have typed a word in the last three hours, but I might
+have been working really hard to figure out what some obscure
+piece of Greek is saying or whatever it is –
+
+DT: I think another important same sort of point is the cost. The
+fact that so many college students obviously are not wealthy, and
+they have to borrow money to even go to school, borrow money to
+buy books, and forcing kids sometimes to pay for proprietary
+software, I think is really unfair.
+
+CS: No, that’s exactly right. So, at the University of St. Thomas,
+I have a lot of first generation students, and they’re really
+bright and very hardworking. I love my students. They’re great.
+But, you know, not all of them can afford very much. Some of them,
+you know, they come in, and […] the best piece of technology
+they’re able to have is a beat up old, retired, you know, work
+laptop that an uncle gives as a gift, something like that. Or,
+it’s an old, iPad two or something like that. And, you know, if
+the tools that we’re requiring them to use do not run on those
+devices, that’s not equitable. And not only is it not equitable, I
+actually am of the opinion that it’s breach at a Catholic
+university of our own ecclesial law regarding the fact that we’re
+supposed to strive to make our educations accessible to as many
+people as possible. Now, tuition is the greatest hurdle to that,
+and part of that involves getting more donations in all of that.
+But things that we can do as instructors to help with it include
+things like, well, not requiring brand new multi-hundred dollars
+textbook purchases, but rather –
+
+DT: Not forcing students to buy a MacBook, which is something many
+–
+
+CS: Not forcing brand new. Yeah, exactly. You know, all of those
+things we can. So, yes, you have to buy resources to be a student,
+but making sure that it’s limited and sensible and that these are
+things that you actually need. You actually need this textbook,
+but you can buy used, and it maybe can be a lower cost version or,
+you know, you have to have a laptop, computer or something you can
+use for writing, but you don’t need to be running anything high
+powered. You can just use Ubuntu and fire up, you know, Abiword,
+and write your paper, you know, something like that, very simple.
+So, that’s exactly right.
+
+DT: Heck, you don’t even need a graphical environment on Linux to
+use text editors. There’s so many command line text editors. Like,
+there’s literally not a machine that doesn’t have enough power to
+run the command line.
+
+CS: No, that’s right. That’s right. Just about anybody can write a
+beautiful school report using LaTeX with Vim.
+
+DT: That’s exactly where I was going. You know, and once you get
+into to Vim and LaTeX at the command line, I mean, that’s so many,
+especially once you get into the math and sciences, especially
+require students to eventually learn LaTeX, anyway.
+
+CS: Exactly. So even in theology, I make a strong point of […]
+really strongly encouraging students to start learning the tools
+that they’re going to need to use in their respective majors – and
+really in their chosen career fields – even within my class. So,
+I’ll say things like, you’re doing a skit, a group skit for class
+today. Well, if you’re in communications, go use this open source
+script writing tool that you might use if you go work in
+multimedia for a news network or something and figure it out, and
+that’ll be a part of your grade. You know, […] I want to see you
+flexing your stepping outside of your comfort zone knowing, you
+know, with regard to computer usage, you know, points and click.
+That’s very rarely the most efficient way to make use of a
+computer. It’s only most efficient with dialing a phone number or
+something like that. And there’s no awareness of that among
+students today. And so I try to get them to have that awareness.
+Yeah, there is this thing called LaTeX, and if you are in computer
+science or chemistry, I want you to go dabble in it if you have
+that desire to do so, to be somebody writing lab reports or, you
+know, that sort of thing. I want you to dabble in this stuff. And
+yeah. That’s another thing that really, I make a point of doing
+that. And I try –
+
+DT: And it’s just a weird kind of flex too, because now you have
+some of your students that are also taking a physics class and
+they tell their professor, they know LaTeX now, and where’d you
+learn it? Well, Dr. Stephan.
+
+CS: I’m not teaching them LaTeX. I’m just saying, I encourage you
+to go learn it.
+
+DT: You’re just pushing them in that direction, right?
+
+CS: Right. To be totally clear. But I like that “weird flex.”
+That’s really funny. And then also, you know, I try to put into
+practice what I preach. So, I contacted the head of IT and I said,
+can I install the new Linux on this laptop that you’ve given to
+me? I know that KDE will work out of the box with the docking
+setup you put in my office, and you know, nice people. But the
+answer is no. So, I brought my Raspberry Pi from home with FreeBSD
+on it and that’s what I’m using in my office right now because,
+you know, on the Microsoft windows setup our IT provides, I can’t
+even install anything. And so how am I supposed to do my work if I
+have to make a phone call when I want to install Zotero or
+LibreOffice or the terminal emulator that I want to use so I can
+be keeping an informative IRC open on the side or whatever it is?
+
+DT: And this is the problem with the workplace in general, these
+days and so many places of business have their computers locked
+down, especially their Windows machines locked down in such a way,
+many times they’re running inside virtual machines. And you really
+can’t do anything. You have no permissions at all to do anything
+on that particular operating system on that machine. And it really
+does limit the amount of work you’re able to do sometimes. I’ve
+run into this situation before as well.
+
+CS: Yeah, yeah. It really can be.
+
+DT: Now let’s talk about some of the free and open source
+software, not just for your students that you think is important
+for your students, but for you personally. What free and open
+source software is important to you in your work?
+
+CS: Oh, thank you. That’s a great question. So, I think it’s
+always just about what the best tool is for the given job. So,
+right now I’m talking to you in Manjaro KDE with Bismuth so I can
+have all of my tiling window manager key bindings set how I like
+them and all of that.
+
+DT: Is that Manjaro ARM on the Pi or is this on a … ?
+
+CS: No, this is on a ThinkPad. So it’s the 64, you know. AMD 64.
+But I have FreeBSD on my Pi in my office, and that ends up being
+mostly like for doing emails and things like that.
+
+DT: Yeah, because I was asking cause if you were on Manjaro on the
+Pi, I was going to have to rethink what the Pi could do because
+this has been a great stream so far as far as the video feed and
+all.
+
+CS: Oh, no, no, no, no. No, this is orders of magnitude more
+powerful than a Pi. The Pi doesn’t keep up with video conferencing
+at all.
+
+DT: Not at all.
+
+CS: Not even the Pi four. I bet the Pi five will, but –
+
+DT: I hope so.
+
+CS: Yeah, yeah. It’s close. It just skips a beat. So the Pi 4
+does.
+
+DT: The P 4 is so close to being able to be a desktop replacement,
+other than the CPU as the bottleneck. Really. It’s just not
+quite.
+
+CS: Yeah, that’s right. That’s right. So anyway, at that level, I
+really believe in using the tool for the job. So Manjaro KDE
+’cause I’m docked with my ThinkPad here, and docking works out of
+the box. Everything does with the latest Linux kernels, and
+Manjaro makes it really easy to set up the latest kernel and all
+of that. I’m even able to choose what kernel I want, which is
+pretty nice.
+
+DT: You don’t find a rolling release distribution unstable, cause
+that’s what I get asked all the time.
+
+CS: Well, I do, actually.
+
+DT: You do? Okay.
+
+CS: Yeah, I’ve had some problems actually with the rolling release
+in the past. So, there was a LibreOffice Fresh branch update that
+was pushed as a part of a Manjaro update that made my whole
+dissertation uneditable for a day. That’s not fun [laughs].
+
+DT: I’ve run into the same problems because I depend on OBS,
+Kdenlive, and GIMP. I use those three tools almost every day to do
+what I do. So, I’ve decided I can’t have those rolling anymore. I
+don’t install them through pacman anymore. I have appimages for
+them all, and I just never go get the new version. If the version
+I’m on is working, I just keep that appimage. I never want that
+thing to update because the update, the only thing it’s going to
+do is potentially break something. It’s not going to give me
+anything. If what’s working is working, there’s no need to have it
+rolling.
+
+CS: No, that’s right. So, I like it and I don’t. There are pros
+and cons. Yeah, I think with this exact setup here, basically as
+soon as like Debian stable has a newer kernel, I’ll just switch to
+that and stay with that for time eternal. And, you know, it’s just
+different needs. I really don’t need the rolling other than that
+everything works out of the box right now with this exact setup.
+So again, it’s all about the best tool for the job, and for this
+job, that’s Manjaro right now.
+
+DT: Now, if I didn’t do what I do with videos and didn’t need
+sometimes to test out the latest and greatest software, I would be
+a Debian stable user. That’s kind of what I was before starting
+YouTube. I always ran static release distributions. The idea of
+running a rolling release just seemed ridiculous to me until I
+needed to actually test some of this software. And then, it kind
+of makes sense.
+
+CS: Yeah, yeah. That’s right.
+
+DT: If I ever retire from YouTube, though, I’m going back to
+Debian.
+
+CS: That’s going to be the quotation that everyone places in the
+comments for this.
+
+DT: I’m going to get hate comments.
+
+CS: I’m being very, I’m trying to be very politically neutral with
+regard to what UNIX-like operating system is “best.” And then, you
+know, you just said that. It’s kind of a bomb drop, so to speak.
+Anyway, as far as some of the tools that I use for myself, though,
+software applications that are available that are all free and
+open source. I’ve talked about Zotero. That’s really, really
+potent for citation management. And one thing that’s great about
+that is, I mean, there’s a Firefox extension and a LibreOffice
+extension, and so all three then of those great open source tools
+just work together seamlessly. You know, if most library database
+websites are running the same software or the same database rather
+– I didn’t say that quite correctly. Anyway, most of them are
+running the same stuff and Zotero detects that stuff automatically
+in the extension. So you just click “Add to Library” in the
+Firefox extension, and then – poof! – it’s there in Zotero locally
+and being synced with Zotero’s secure server. And then, it’s just,
+you know, a quick either keystroke command or one click in the
+LibreOffice document to add that citation. And it is so seamless
+and powerful, and it’s all completely free and open source
+software. And then, within Firefox, I use a ton of extensions that
+are really useful for work. It is very straining on the eyes to
+read student work, for example, on a computer screen. So being
+able to switch everything to dark mode. I mean, just simple things
+like that, that sound so obvious, but they’re just so useful. In
+LibreOffice, I normally am running a venerable suite of
+extensions, a Latin language spell checker, the Greek extension
+that I was talking about earlier. It’s just called Ancient Greek
+and it’s available for OpenOffice and LibreOffice.
+
+DT: And one of the things with free and open source software, we
+have a ton of really good spell checkers. We have a ton of good
+translation programs. Like, a lot of people that come from like
+the proprietary software world, I think would be shocked at how
+well we do in that particular area.
+
+CS: No, that’s right. So, yeah, a couple of things right there. I
+use a bunch of command line utility tools. There’s one called
+Whitaker’s Words that’s existed for decades now, but it’s a Latin
+word parsing tool, and it is so potent that it’s unbelievable, and
+you know, you can compile it in any Unix like OS. It’s in the AUR
+[here], you know, so on and so on. And so, normally, I just type
+“latin,” hit Enter in my terminal emulator, and I get this great
+word parsing, where I get the declension, I get a short definition
+and – wow! – does that ever, I mean, the number of hours saved
+from doing that versus opening a big physical lexicon and flipping
+through the pages is absolutely uncanny. I use a Greek Bible in
+the terminal and Latin Bible in the terminal. Luke Smith,
+actually. Here’s another one that’s going to invoke some comments
+for this video, but just to talk about his repositories that he
+hosts in GitHub. A couple of things that he hosts that are really
+great for community service as a whole are these terminal-based
+Bibles. And I can type “grb” for Greek Bible and then say, you
+know, “Mark 1,” and – poof! – there’s Mark 1 in the original New
+Testament Greek or in the Latin Vulgate. By the way, for people
+thinking about this stuff, oh, I’d like to do some of this,
+Alacrity is actually almost essential to use because you really
+have to be using a modern terminal emulator that has full modern
+Unicode built into it from the ground up, or the polytonic Greek
+text, for example, just doesn’t show correctly. So, it doesn’t
+show in the suckless [simple] terminal.
+
+DT: Yeah, ST is pretty good with Unicode, but it’s not Alacritty.
+And I can tell you one that’s terrible. URXVT, which I know is
+popular, is like the worst terminal for Unicode.
+
+CS: That’s right. Yeah. Actually, I’ve tried both URXVT and ST,
+and polytonic Greek doesn’t show correctly in either of them, but
+it shows beautifully and in any monospace font that has polytonic
+Greek, the Hack font has a really nice platonic Greek, Hack Nerd,
+whatever. And that all shows really nicely in Alacritty. So,
+that’s just an aside, you know, for people who are listening
+thinking, oh, I might like to get into some of this. You’re going
+to have a really bad time unless you’re using the right software
+that has full modern Unicode built from the ground up, because it
+won’t display all of the characters, so then you just get annoying
+boxes or nothing.
+
+DT: Well, that’s another thing with the terminal emulator getting
+back to not just the special characters, but also drawing boxes
+or, you know, some of the mathematical stuff people like to do,
+the ligatures. You know, if you pick the wrong terminal emulator,
+a lot of that stuff is just not going to render.
+
+CS: Oh, sure. Let’s see, what else? Oh, so I’m not a Bible
+scholar. I’m dealing with the history of Christianity mostly in my
+work. And then, my teaching is mostly in kind of theology as a
+part of traditional Catholic liberal arts. But, of course, I deal
+with biblical texts all the time as a part of my work. And there’s
+this Qt-based free and open source tool that runs on the SWORD
+Project called BibleTime, and BibleTime, it seems like nobody
+knows about it, but it’s available in every UNIX-like OS’s
+repository. And it is super powerful, and the developers are
+really responsive to comments to their work in GitHub. I’ve made
+at least a couple of points of feedback that they’ve said, oh
+yeah, we love this idea. It’s nice to hear feedback from somebody
+who’s using this professionally. Let us work to improve that, you
+know, for you. And that sort of thing is really great, and it’s
+something that I encourage people to do as you’re looking to get
+into the free and open source software world. Always give that
+feedback. Something with FreeBSD that I’ll just point out that
+relates to that is I was getting really annoyed with LibreOffice
+in FreeBSD because it wasn’t compiled with Java by default, and
+you have to have Java, the Java flag enabled at compilation of
+LibreOffice, to use just about any extensions. But I thought, you
+know what, this is a really friendly community. And so I went into
+IRC to the #freebsd-desktop channel, and one of the people who
+maintains the LibreOffice port for FreeBSD was right there. And I
+said, look, for anybody who’s going to use a full-size office
+software suite rather than a lightweight something else,
+extensions are a big part of that, because we’re probably using it
+professionally, and we probably need the extensions that let us do
+our jobs professionally. And within a matter of two to three
+hours, he had enabled that flag for all builds of LibreOffice for
+all of FreeBSD. And that is just really cool to have those
+community connections.
+
+DT: I think a lot of people imagine that some of these software
+maintainers, devs, some of the package maintainers for various
+Linux distributions or for the BSD operating systems, they imagine
+that these people are not going to be friendly. But that’s usually
+not the case, because I’ve seen people go to like a Linux
+distribution’s forums or IRC chat and say, Hey, I really depend on
+this program, it’s not in your repo. And within hours somebody
+will package it, just because that one person asked for it. You
+know, people do this in their free time too, you know, just out of
+the goodness of their heart.
+
+CS: That’s exactly right. Another related story to that, and just
+a real testimony to the friendliness of the FreeBSD ports
+maintainers and kind of community overall. In the talk that I gave
+for the FreeBSD, I said, you know, Zotero, we run it in wine.
+There’s a group of us running a FreeBSD forum thread about how to
+keep Zotero running. But I said, look, we need either Zotero or
+JabRef, which is another open source citation management tool,
+just for the sake of people doing professional work, whether it be
+in the natural sciences or the physical sciences or mathematics or
+history, whatever, doing these kinds of professional, you know,
+scholarly work or writing, we need one of those two tools to be in
+the ports tree and packaged. And so, I issued a little challenge,
+a little call to arms, and I’m really proud to say that now there
+are not one but two ports of Zotero in the FreeBSD. One that’s
+based on Linuxulator, on the Linux compatibility layer, and one
+that is a native build, and they’re both available. So, you can
+just do “pkg install zotero,” “pkg install libreoffice,” and they
+both work together now. But, you know, that responsiveness and,
+you know, rather than complaining, if you’re not a person who’s
+writing the code, here are a few really key rules to live by that
+are somewhat professionally inspired by me, I guess, just because
+of the kinds of things that I do, but also just being human. If
+you’re not writing the code, always just say, “thank you.” And if
+you don’t know how to make the change, find a really respectful,
+targeted way to ask the question for the change to happen. So,
+don’t just, you know, go on some tirade in a public facing forum
+about something. Join a private IRC room and say, you know, hey,
+Mr. So-And-So, I love that you’re doing this. Can we talk about an
+idea to make this better for people doing this kind of work? And
+that’s a great way to make positive change.
+
+DT: Especially when you’re not paying these people anything to
+help you. In some cases, these people are not asking for pavement.
+They’re just there as just a service to the community. Really,
+it’s just, in a lot of ways, it’s altruism, right? They’re just
+trying to, which probably, now that I think about it, you being
+Catholic, part of your faith, altruism, I think maybe that’s
+probably why you gravitate maybe to bring open source software, I
+don’t know. Maybe I’m making a connection there that isn’t there.
+
+CS: No, there is a connection there. It’s inspired by faith and by
+just the kinds of things that I do that, for example, all of my
+educational video lectures that I release on Odysee, I have under
+a Creative Commons license, and I want there to be academic
+freedom. And I like the idea of the free exchange of ideas. I like
+that … It’s very important to me that we all be working together
+for the work that I do, supporting people’s education, you know,
+that sort of thing, so, that’s absolutely right.
+
+DT: And I should mention that I had actually met you on Odysee.
+
+CS: That’s right.
+
+DT: It’s how we did this interview, set this up is because of my
+channel on Odysee and you’re on Odysee.
+
+CS: No, that’s exactly right. And yeah, why Odysee? This is a
+great line to go down. So, I’m very deliberate about all of these
+things. I was going to find in my new, so in my new position, I
+knew I needed to make a lot of video lectures and lessons and help
+guide students through really challenging dense readings and
+things like that. A lot of students where maybe their parents, you
+know, English is not their first language. And so, getting into
+really dense readings, it’s just a matter of guiding. And I love
+doing that. It’s so rewarding and so much fun. But I wanted to
+pick, I needed to pick, a platform that was accessible to students
+and immediately intelligible to them while respecting their
+software freedom and not putting me at risk of corporate
+censorship. Because being a Catholic theologian, what are the
+kinds of topics that I have to talk about all the time? Well, I
+have to talk about matters of dogma and doctrine, I have to talk
+about –
+
+DT: Immorality and sin, and there’s a lot of things that could get
+flagged on YouTube.
+
+CS: I have to use words like fornication or damnation. And those
+are all words that are not going to be received well in a
+corporate platform like YouTube just because of the nature of what
+it is. So, Odysee, I think that it gets misunderstood as like, oh,
+this is a place where, you know, paranoid persons or hate mongers
+go.
+
+DT: It’s all conspiracy theories.
+
+CS: Yeah, that’s right. But actually, why am I there? I am there
+because I could not think of a better way to protect my own
+academic freedom and my students’ software freedom simultaneously
+than being in Odysee. And so, is it perfect? It’s absolutely not
+perfect. The whole cryptocurrency thing there is, it’s goofy, to
+be frank. And I’m really glad that my students just ignore that.
+
+DT: Well, they’ve moved away from it recently, ’cause now you can
+actually take donations in US dollars, and I think that’s going to
+become the preferred currency on the platform now that that’s
+available.
+
+CS: Right. So, that’s not why I’m there. I’m not looking to get
+paid extra by being there. But yeah, just the idea of having it
+built from the ground up with freedom in mind is just very
+potent.
+
+DT: And well, as people imagine that like, there’s nobody
+moderating Odysee. There’s nobody in charge. That’s not the case.
+Certainly, they have to take down anyone involved in any illegal
+activity, because it is a US-based company. They have to follow US
+law. But unlike YouTube, they don’t have a bot that goes around
+that’s triggered by certain words or images and thumbnails. And
+that’s the problem with YouTube is it’s all automated and 90%,
+more than 90% of the stuff that gets flagged in YouTube did not
+need to get flagged. It was false positives, essentially. And
+that’s what frustrates creators. It’s because you put in so many
+hours of work in something, and then YouTube just deletes it. Or
+sometimes, they delete entire channels, ban people, kick them off
+the platform for no reason.
+
+CS: That’s right. That’s right. Come to think of it, maybe I
+shouldn’t have used those words, because this video is also going
+to be on YouTube.
+
+DT: Well, it’ll be all right.
+
+DT: Thankfully, I’m to a size where they’re not as quick to jump
+to … They’ll still demonetize a video, but I can appeal, and it
+always gets reversed. I’ve never actually had anything that was
+actually striked on my channel, that was striked for a legit
+reason. And thankfully, I’ve been able to get all of them reversed
+at some time, or another. One of them, it took me almost two
+years, though, for them to finally monetize one of my videos on
+Qtile, because something triggered the algorithm on a video where
+I was scripting in Python. I don’t know what I said while I was
+writing the Python code, but something triggered.
+
+CS: Oh, you know, those tiling window managers [laughs]. You’re
+hacking, so therefore you’re doing something mischievous.
+
+DT: Well, I think that’s great that you’re on a free and open
+source platform, like the LBRY Protocol, Odysee being a front end
+to library. So, when I say, you’re a free and open source zealot
+and a die hard, I mean, that’s really the case because, you’re not
+on YouTube at all, are you?
+
+CS: Well, I mean, I have a Google account.
+
+DT: Right. Well, everybody has a YouTube account, I guess,
+technically, but –
+
+CS: But so I am on, like I subscribe to some channels there, but
+generally, I won’t comment there or anything like that. And also,
+you know, YouTube has just become less user-friendly over the last
+couple of years.
+
+DT: I’ve seen the comments.
+
+CS: Yeah. If you’re not using uBlock Origin, or another effective
+ad blocking tool, some videos are unwatchable.
+
+DT: The problem with YouTube, too, is it’s a social network.
+There’s a social aspect to it with the community and the comments.
+But when YouTube removes so many comments because of their
+algorithms, and, again, more than 90% of the comments they remove
+are just false flags that, for whatever reason, Google decided to
+remove these people’s comments for no reason, really benign
+comments. And that frustrates people that are trying to have a
+conversation. When you can’t have a conversation because the
+comment, you took time, five minutes to write this paragraph, and
+then it just instantly gets deleted. You know, that causes people
+to explore alternatives.
+
+CS: No, that’s right. And, you know, maybe somebody watching this
+video in five years will be in a situation in which there are
+better alternatives or better places to host video content, but
+for right now, I just decided on Odysee.
+
+DT: Well, Corey, one last thing I wanted to talk about with you
+for free and open source software, getting away from the software
+you use for work and, you know, for business essentially, right.
+To earn a paycheck. What about software for fun, free and open
+source gaming?
+
+CS: [laughs] Oh, what a great question! So, obviously 0 A.D. is
+the best free and open source computer game and maybe the best
+computer game that exists. So, I love 0 A.D.
+
+DT: You have a point with that one. Yeah. I think it’s one of the
+best, I think it’s the best real-time strategy game out there.
+
+CS: It’s so fun. You know, it’s built. So, I don’t get much time
+for […] to do that sort of thing. I’m just so busy with work and
+my wife and children and so on. But –
+
+DT: The historian though, you being really as a theology
+professor, you deal a lot with history. You probably love the
+historical aspect of all the various historical figures in the
+game. All the heroes, of course, are real people that, you know,
+led these civilizations.
+
+CS: Yeah. The makers of 0 A.D.. something that I love about the
+project, and one reason why I really say, yeah, it’s definitely
+the best free and open source game out there right now. Although
+there are several that are really great and fun to play. I mean,
+there are flight simulators and space simulators and all these
+things, but I mean, one thing that’s so great about it is they
+have a really fanatical attention to detail. And I love that. I
+mean, it couldn’t be like that with a proprietary project because
+you really just have to have a community-based project where a
+bunch of eyes are looking over it and it’s people doing it for the
+love of the thing for there to be such fanatical attention to
+detail. I mean, in the forums, people are citing scholarly
+publications about ancient civilizations as the reasons, you know,
+for making certain decisions about what their units ought to look
+like or what characteristics they ought to have.
+
+DT: And the Greek civilizations, there’s three of them in the game
+that the fact that the characters speak Greek, when you click on
+them.
+
+CS: They speak Greek. The Romans, they speak Latin. And the
+pronunciation for those things, all of it is actually exquisitely
+done. As in, I don’t know who the people are behind that. I want
+to look into that, but I’m certain that they’ve had professional
+consultations.
+
+DT: Well, I think this is a situation where being open source
+helps them because they can source all of this pronunciation from
+people all over the world that would be much more familiar. You
+know, for example, the correct Greek and Latin and Persian, you
+know, all these languages that are in the game that a proprietary
+company would actually have to go probably pay people to do, where
+you could just put out a call to the community and they’ll take
+care of translation for you.
+
+CS: Yeah. And it’s not just the, I mean it’s restored or what we’d
+typically call restored ancient pronunciation. So, it’s even at
+the level of we want it to sound as close as we can approximate to
+how the people sounded in antiquity speaking these languages. And
+– oh, my goodness! – it’s just so much fun. It’s so fun, in fact,
+that I’ve been asked to teach a Greek class this spring, and I’m
+planning on using 0 A.D. If my dean is listening to this video
+lecture, I’m going to use 0 A.D. as a highly effective educational
+resource. So, that’s for my boss. But you know, there’s team
+building in there, and the Greek is great, and it’s just, it’s a
+lot of fun. And you can run it on anything. It’s available in
+every, you know, it’s available as an appimage, so you can run it
+on any GNU Linux distribution. It’s in the FreeBSD repositories,
+OpenBSD, NetBSD, MacOS, Microsoft Windows. Basically, if a person
+is running a computer that has a reasonably recent graphics card
+or an integrated one from a recent processor, the person can run 0
+A.D., and that makes it a lot of fun too, ’cause you can like, you
+know, I can play against the, like, my brother and I will play
+against each other and totally different [setups]. I can host it
+on a ThinkPad, for Heaven’s sake. You know, that’s something.
+
+DT: Well, I love 0 A.D., so that great to hear. And again, I think
+if you’re a fan of history, you’d love the game. Everyone should
+check out that game.
+
+CS: Yeah. And you have my professional imprimatur that […] – wow!
+have they ever done a good job with the attention to detail! I
+mean, it’s a game. So, fun is first, but there’s other, the
+attention to detail with, with making the heroes and all their
+characteristics that they have and the architecture and everything
+is just, it’s really good.
+
+DT: One minor gripe I have with the game is the name of the game,
+0 A.D. People often make the mistake of thinking there is actually
+a year 0 A.D.
+
+CS: Oh, right.
+
+DT: Because even back in my school days, people would talk about
+the year zero or 0 A.D. And it’s like, no, because 1 B.C., the
+year after that was 1 A.D. There was no zero. There’s no year
+zero.
+
+CS: Right. And which is why they named it that was to be clever,
+because it’s an imagined time that never existed, just like, for
+example, it was never the case that most of these civilizations
+were at war with each other. The Romans were never at war with –
+
+DT: Like the Egyptian civilizations, Chinese, the Indian
+civilizations.
+
+CS: Yeah.
+
+DT: But you can do the Spartans and the Persians, and that makes
+sense.
+
+CS: Right, right.
+
+DT: So you can relive the movie 300.
+
+CS: That’s right. Yeah. We are Sparta. Oh, it’s so much fun. You
+know, one other thing that I’d just like to point out, I know that
+we’re winding down here is that while I tend to stand alone right
+now in the world of Catholic theology, it’s not as though the
+things that I’m advocating and the reasons for them are entirely
+without precedent. I mean, at the Vatican archives there are
+80,000 manuscripts that are being digitized. This is a
+multi-decade long process. And the file type that’s been chosen
+for that is the open imaging file type that NASA produces. And
+why? Well, it’s really high quality, and it’s an open standard
+that will never go obsolete. So, if you’re going to go through
+this extremely expensive, extremely technically precise process
+that takes years and years and years with a whole team of scholars
+and so on, well, of course, you need to have it be an open
+standard.
+
+DT: Now, you can’t choose a proprietary format, not for something
+that you want to be able to be opened centuries from now. If you
+choose proprietary software, it’s going to be obsolete within a
+few years. The company that made that proprietary format could be
+bankrupt within your lifetime. Right? So, it’s not like it’s going
+to be around 500, thousand, 2,000 years from now. Those documents
+will be lost if you depend on –
+
+CS: Yeah, that’s exactly right. And it’s supposed to be, the end
+goal for that project is to have basically all of the Vatican
+archives available for the whole world in a digitized format. And
+of course, they really have to be largely locked down in their
+physical form because that’s the only way to protect many of
+materials. But once you’ve digitized them, then anybody can look
+at them in really high quality graphical images from anywhere in
+the world with a high speed internet connection. And, you know,
+that project is under work. And there are other projects like that
+where it’s, well, of course, it’s just using open standards
+because the open standards are what have the best odds of
+security, they’re what have the best odds of long-term usability,
+you know, so on and so on. The list just goes on of the benefits
+of employing –
+
+DT: Open source software never dies.
+
+CS: Yeah, that’s right. That’s right […] So, those images, the
+idea is that somebody could write a tool to use them on whatever,
+you know, quantum computers were using, you know, 250 years from
+now, which is really beautiful to think about building that for
+posterity now.
+
+DT: Well, that’s a good point. Well, Corey, would you like to
+disclose any contact information? Where can people follow you
+online? You got any social media accounts? Obviously, you have an
+Odysee channel.
+
+CS: Sure. So, if anyone is interested in watching videos from a
+free software geek, but they’re instructional videos about
+Catholic theology and history and liberal arts, you can, of
+course, go to my Odysee page. My channel is just Corey Stephan,
+Ph.D. But the website, which is where I blog, and I blog about
+using free software, and I kind of keep everything consolidated
+there, is just coreystephan.com. I like to keep things nice and
+simple. I don’t like to manage a huge online presence. I like to
+manage one tidy little professional presence. And so, that’s what
+it is. And so, that’s the best place to go.
+
+DT: I’ll be sure to link to those in the video description for
+this video as well.
+
+CS: Sure. And oh, and if somebody wants to write to me to ask
+questions about anything, I have a little contact form right
+there. And unlike a lot of private website contact forms, I keep
+that up-to-date, and I always respond immediately when somebody
+writes to me there. So, that’s the best way to get in touch with
+me.
+
+DT: Great. Well, Corey, thank you for talking with me today. And
+thank you for all your hard work in promoting free and open source
+software, and I especially appreciate that you’re fighting for
+your students as far as privacy rights and our school systems and
+universities. So, I want to thank you for that.
+
+CS: Well, thank you so much, and thank you for the work that you
+do. I always, I know that some people might think, oh, you know,
+Derek Taylor of DistroTube, he has just this really cool job where
+he just gets to sit around and talk about GNU/Linux and free
+software all day. And it is a really cool job. And he does,
+there’s a degree to which that’s what’s happening. But I always
+describe you first as an educational content creator. As in, you
+are teaching people how to be really empowered to take ownership
+of our digital lives. And – wow! – I mean, thinking about it in
+those terms, it’s so much more than just a really cool job. It’s
+also a really important job.
+
+DT: I appreciate that, Corey. Thanks for hanging out with me, and
+I hope you have a great rest of your day.
+
+CS: Yes. You, too. Take care.
+
+DT: Peace.
