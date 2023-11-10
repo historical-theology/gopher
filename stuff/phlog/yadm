@@ -1,0 +1,77 @@
+With Yet Another Dotfiles Manager, dotfiles become (nearly)
+orderly enough for this historical theologian
+
+August 23, 2020
+Corey Stephan
+
+Historical theologians and GNU/Linux geeks both crave order where
+order is hard to find. Legacy file types and minor conflicting
+precedents in the tradition cause chaos to fall as acid rain on
+the continents in which each group’s members work. One drop of
+order brings sweet, albeit temporary, relief—whether it be a
+coherent summary of the regula fidei such as St. John Damascene’s
+De fide orthodoxa or an efficient CLI & GUI package management
+tool such as Manjaro’s pamac.
+
+GNU/Linux dotfiles are notoriously unruly. Some applications
+follow the /home/user/.config/___ placement standard, others
+expect their dotfiles to be directly in the home directory, and
+eccentrics place their dotfiles in locations that seem altogether
+random. Some of the disorderliness can be mediated with
+reorganization—but not all.
+
+Amid the mess, I have found a tool that makes at least backing up
+and organizing the dotfiles in my custom Debian installation with
+spectrwm more efficient: Yet Another Dotfiles Manager (yadm). The
+core purpose of yadm is to streamline syncing dotfiles with a git
+repository. As a beginner with dotfiles and (especially) dotfile
+management, I use yadm to maintain a simple repository in GitHub
+(historical-theology/spectrwm-dotfiles).
+
+yadm takes standard git commands, including:
+
+yadm clone
+yadm add [.config, etc.]
+yadm commit -a
+yadm push
+
+What sets yadm apart from normal git is that (as the name
+suggests) it is designed specifically for work with dotfiles. It
+has a variety of features for that purpose, such as allowing a
+person to include custom dotfiles installation scripts in his yadm
+configuration and helping him maintain separate sets of dotfiles
+for different GNU/Linux installations in the same repository.
+
+I have (wildly) disparate dotfiles for Manjaro i3 on my desktop
+and Debian 10 with spectrwm on my laptop. In case I should need to
+perform a fresh installation of either, I would like to be able to
+bring it back to my own arrangement quickly in order to resume
+working. Thus, I intend to make use of some of yadm’s advanced
+features in the near future.
+
+yadm keeps everything contained in a regular git repository that
+can be cloned with the standard “git clone” command. If you would
+like to test my (work in progress and humble) white-on-black
+dotfiles for spectrwm, urxvt, and other software, feel free to
+make a clone. You might choose to fork the repository in GitHub to
+start building your own minimal, white-on-black tiling window
+manager setup. I license all of my little tinkers that make it
+into that repository with the MIT License, so you are free to do
+with them whatever you would like. Tinkers that I have duplicated
+from others are all free (libre), as well; although most geeks do
+not care what others do with their dotfiles, we must try to
+maintain the credit and licensing chains for those who do.
+
+Dotfiles are meant to be copied and adapted rather than written
+from scratch. The origin of each component of a particular dotfile
+might be lost, and the resultant dotfile might be messy, but what
+matters most is that it works. Hence there is at least one spot of
+common ground between a dotfile and a classic theological
+treatise, an isthmus bridging the continent of the geek and the
+continent of the theologian. What matters most in a treatise is
+that it communicates orthodoxy, not that the sources behind it be
+immediately obvious nor even that the treatise itself be as tidy
+as the reader would prefer.
+
+Deus vos benedicat,
+Corey Stephan

@@ -1,0 +1,182 @@
+                            .-------.
+                            | Phlog |
+                            '-------'
+
+A phlog about Catholicism, theology, free & open source software, &
+related matters
+
+           __
+          (`/\
+          `=\/\ __...--~~~~~-._   _.-~~~~~--...__
+           `=\/\               \ /               \\
+          `=\/                V                 \\
+            //_\___--~~~~~~-._  |  _.-~~~~~~--...__\\
+           //  ) (..----~~~~._\ | /_.~~~~----.....__\\
+          ===( INK )==========\\|//====================
+         __ejm\___/________dwb`---`_______________________________
+
+
+0OpenBSD 7.3 on a ThinkPad X270 (plus my Theological Dotfiles)	/stuff/phlog/openbsd-thinkpad
+for Scholarly Work
+
+This tutorial (for lack of a better name) is an expanded and
+polished form of my personal notes on how to install OpenBSD and
+configure my Theological Dotfiles on a Lenovo ThinkPad X270. I
+hope that these notes will help at least one other person
+configure OpenBSD for mobile research and writing.
+
+0How to Extend the QuirkLogic Papyr’s Useful Life with F-Droid	/stuff/phlog/quirklogic-tutorial
+(no rooting or hacking required)
+
+Introduction In my recent deep review of the QuirkLogic Papyr
+E-Ink tablet, I purposefully focused on the device’s stock
+settings. Since I promised the folks at QuirkLogic that I would
+provide them with extensive critical feedback, I needed to keep my
+feedback focused on the device exactly as they configured it. Yet,
+each of us […]
+
+0An Asst. Professor’s Deep Review of a Stock QuirkLogic Papyr	/stuff/phlog/quirklogic-review
+E-Ink Tablet
+
+I promised the folks at QuirkLogic that I would provide them with
+deep, long-term analysis. After I have used my handy Papyr as a
+full-time assistant professor regularly for seven months, I now
+share my promised review, whether or not anyone is actually still
+at QuirkLogic to read it. Is this a farewell message to a
+technological startup company that has run its course, or is it
+timely critical feedback that will help that company — in at least
+some small way — with bringing something better to market for us
+E-Ink aficionados to enjoy?
+
+0DistroTube’s Interview “Theology Professor and Free Software	/stuff/phlog/distrotube
+Advocate, Corey Stephan Ph.D.”
+
+On October 21, 2022, I had the privilege of being interviewed by
+Derek Taylor of DistroTube about my advocacy and use of free and
+open source software as a professional Catholic theologian. Here,
+I share a full transcript of that interview.
+
+0My FreeBSD Friday Lecture: The Writing Scholar’s Guide to FreeBSD	/stuff/phlog/freebsd-friday
+
+The FreeBSD Foundation is a “non-profit organization dedicated to
+supporting and promoting the FreeBSD Project and community
+worldwide.” Part of the explicit mission of the Foundation is to
+provide “workshops, educational material, and presentations to
+recruit more users and contributors to FreeBSD.” Early in the
+COVID-19 pandemic, the folks at the Foundation launched a monthly
+[…]
+
+0Raspberry Pi 4 with FreeBSD 13-RELEASE:	/stuff/phlog/pi4-freebsd
+A Perfect Miniature Homelab
+
+In the weeks leading to 13-RELEASE, the #freebsd-arm mailing list
+was ablaze with a heroic collective effort to ensure that a
+flawless image for the Pi 4 was available on the actual release
+date. I am here to say that it was a success.
+
+0After Traditionis custodes, is it time for the Vatican	/stuff/phlog/traditionis-custodes
+to reconsider ‘extraordinary’ ministries writ large?
+
+My observation (and, therefore, my call to correction) is that the
+Vatican is inconsistent in setting its expectations for how
+bishops ought to handle that which she officially defines as
+“extraordinary.”
+
+0My FOSDEM 2021 presentation on how to optimize multisource	/stuff/phlog/fosdem21
+historical research with tiling window managers
+
+The Free and Open Source Developers European Meeting (FOSDEM) is
+one of the world’s largest annual gatherings for free software
+advocates (like myself) and developers to share and discuss our
+work. Because the meeting was virtual this year (in response to
+the pandemic), I was blessed with the opportunity to participate
+by pre-recording a presentation. […]
+
+0Awesome Theology: a curated list of open source software for 	/stuff/phlog/awesome-theology
+Catholic theology
+
+One month ago, I launched the GitHub repository awesome-theology.
+I intend Awesome Theology to be a new contribution to the Awesome
+project. Awesome is a parent system by which “awesome lists about
+all kinds of interesting topics” are made and maintained by
+persons who are engaged in those topics. The Awesome Manifesto
+specifies that an […]
+
+0How to make Brightspace Desire2Learn (D2L) a bit less undesirable 	/stuff/phlog/d2l
+
+The Learning Management System (LMS) Brightspace Desire2Learn
+(D2L) was one of a number of popular software tools that I
+condemned in my free software manifesto for Catholic institutions.
+Ideally, nobody would use non-free, closed source institutional
+spyware, including D2L. In addition to the litany of ideological
+and security-related problems that come with D2L, it also […]
+
+0With Yet Another Dotfiles Manager, dotfiles become (nearly) 	/stuff/phlog/yadm
+orderly enough for this historical theologian
+
+Historical theologians and GNU/Linux geeks both crave order where
+order is hard to find. Legacy file types and minor conflicting
+precedents in the tradition cause chaos to fall as acid rain on
+the continents in which each group’s members work. One drop of
+order brings sweet, albeit temporary, relief—whether it be a
+coherent summary of […]
+
+0Electromagnetic radiation, social distancing, & good cheer	/stuff/phlog/amateur-radio-good-cheer
+
+As weeks of social distancing have dragged into months, good cheer
+has become scarce. Spending quality time with someone outside of
+one’s household has not been a (responsible) possibility for too
+long. Even face-to-face interactions with extended family have
+been replaced by video calls. With people trying to manage a host
+of potential daily problems—unemployment […]
+
+0Replacing Manjaro i3 with an (extremely) minimal, custom OS	/stuff/phlog/spectrwm-on-debian
+for portable work: spectrwm on Debian 10
+
+Until recently, my favorite GNU/Linux distribution was Manjaro,
+which is based on Arch Linux. Manjaro is to Arch as Ubuntu is to
+Debian—an overhaul of the parent distribution that is intended to
+be intuitive for (nearly) all users and immediately functional on
+(nearly) all desktop systems. Manjaro with i3wm—my first tiling
+window manager—remains my OS […]
+
+0On Obi-Wan, Vader, & the cultural isolation of rejecting democracy	/stuff/phlog/cultural-isolation-true-religion
+for true religion
+
+Immediately before what could have been the greatest battle of the
+Star Wars franchise (if not for poor dialogue and the bizarre
+setting of Mustafar)—the long-awaited first duel between Master
+Obi-Wan Kenobi and his former apprentice who had just turned to
+the Dark Side and pledged his subservience to Darth Sidious—there
+is a perplexing exchange: […]
+
+0coreystephan.com’s new minimal design (& my thanks to the Suckless	/stuff/phlog/minimal-web-design
+folks for inspiration)
+
+Although I cannot endorse the hostile tone of the folks who
+participate in the Suckless project (“Software that Sucks Less”
+inasmuch as it is both free and open source and as minimal as
+possible while functioning as intended), I am grateful for their
+work. Like many GNU/Linux aficionados, I use the “Stuff that
+rocks” list […]
+
+0For remote instruction, faculty and administrators at Catholic 	/stuff/phlog/remote-instruction-free-software
+institutions should turn to free & open source software
+
+Faculty and administrators at Catholic institutions have a
+responsibility—perhaps, I dare suggest, a moral imperative—to
+employ free and open source software. That responsibility becomes
+particularly clear during a time when we are all involved in
+remote instruction as a temporary means of survival. At this
+moment, we have a unique opportunity to reevaluate our software
+choices. Let us not allow that opportunity to be wasted. Moving
+forward, we ought to use only free and open source software.
+
+0CLI Bibles: Greek, Latin, & English	/stuff/phlog/cli-bibles
+
+Since the goal of making Scripture available in an array of
+formats is widespread, it is unsurprising that Christian free and
+open source software developers have blessed us with various
+command line interface (CLI) Bibles for GNU/Linux and other
+Unix-like operating systems. The three that I use regularly are
+grb, vul, and kjv, which show […]

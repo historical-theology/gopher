@@ -1,0 +1,243 @@
+My FOSDEM 2021 presentation on how to optimize multisource
+historical research with tiling window managers
+
+April 9, 2021
+Corey Stephan
+
+The Free and Open Source Developers European Meeting (FOSDEM) is
+one of the world’s largest annual gatherings for free software
+advocates (like myself) and developers to share and discuss our
+work. Because the meeting was virtual this year (in response to
+the pandemic), I was blessed with the opportunity to participate
+by pre-recording a presentation.
+
+Overall, I found FOSDEM to be an enriching experience. The
+organizers did excellent work, and all of the presentations that I
+attended were quite engaging. FOSDEM’s return to form as an
+in-person conference in Brussels will make it challenging for me
+to return, but I hope to do so.
+
+Per FOSDEM’s brilliant, fair guidelines, my presentation is
+licensed under the Creative Commons Attribution 2.0 Belgium
+License (CC BY 2.0 BE). Anyone is free to copy, modify, and/or
+distribute some or all of this presentation, but I must be given
+due credit.
+
+Here I share both the video recording of my presentation as it is
+housed permanently on the FOSDEM website and the full script (from
+which I only deviated slightly during the actual recording). I
+have added hyperlinks throughout the text. Enjoy.
+
+Deus vos benedicat,
+Corey J. Stephan
+
+FOSS for the Professional Historian: Optimizing a Multisouce
+Historical Research Workflow in BSD or GNU/Linux with a Tiling
+Window Manager and Manuscripts Galore
+
+Corey Stephan
+February 6, 2021
+
+https://ftp.heanet.ie/mirrors/fosdem-video/2021/L.lightningtalks/foss_for_historians.webm
+
+For historical research and writing, the use of a dedicated tiling
+window manager and other customizable FOSS tools improves
+efficiency. With a bit of work, manuscript facsimiles, database
+query tools, and other items that a historian might need to have
+opened simultaneously can be sorted exactly how he/she wishes,
+freeing crucial time from organization for proper analysis. In
+this presentation, I explain how to optimize a multisource
+historical research workflow inside a tiling window manager with
+an entirely libre software toolkit.
+
+Hello, everyone. My name is Corey Stephan, and I am currently a
+Ph.D. candidate in the Department of Theology at Marquette
+University in Milwaukee, Wisconsin, United States. My presentation
+is titled “Free and Open Source Software for the Professional
+Historian: Optimizing a Multisource Historical Research Workflow
+in BSD or GNU/Linux with a Tiling Window Manager and Manuscripts
+Galore.” Thank you for having me.
+
+Many professional historians research and write with rather
+haphazard desktop or laptop computer setups. Perhaps it is natural
+that the sort of mind that thrives on piecing together minutia
+from historical documents tends to be different from the sort of
+mind that thrives on learning to use cutting-edge technology.
+
+However, the busy scholar cannot afford to work without keeping as
+many tools for efficient research and writing in her toolbox as
+possible. For example, the operating system for a historian
+working with myriad large documents ought to lightweight and
+stable. I have had my Ryzen-powered desktop with 16GB of RAM crash
+because I was manipulating a manuscript facsimile that used 13GB
+on its own, and I have had a regression in LibreOffice Fresh
+render a work-in-progress dissertation chapter unable to be edited
+until I downgraded to LibreOffice Still. Neither moment was
+pleasant. Most big name open source operating systems that are not
+completely rolling release are well suited for the job, such as
+FreeBSD, Debian, or Manjaro, but the scholar must take care to use
+long-term service kernels and software whenever reasonably
+possible.
+
+Beside the operating system, the window manager is the most
+important part of the historian’s toolbox. For multisource
+historical research and writing, the use of a dedicated tiling
+window manager can improve efficiency quite dramatically.
+Manuscript facsimiles, database query tools, and other items that
+one might need to have opened simultaneously in various windows
+are placed exactly where one intends rather than in a random
+location (like in stacking window managers and, therefore, most
+traditional desktop environments). Moreover, no windows are
+allowed to overlap, and each window occupies all the screen space
+allotted to it.
+
+There are dozens of tiling window managers available for the X
+Window System atop the BSDs and GNU/Linux. Generally, they can be
+placed inside one of two broad categories: manual and dynamic.
+Manual tiling window managers, which require the user to specify
+exactly where each window ought to be placed, have an advantage
+with regard to precision. Yet they tend to be too tedious for
+multisource historical workflows. Dynamic tiling window managers,
+which position windows automatically, are both simpler to use and
+more efficient for the kinds of tasks that we undertake. 100%
+accuracy is less important for the scholar than being able to have
+a lot of windows open at one time without any overlap. Thus, I
+recommend a dynamic tiling window manager.
+
+As for which of the many dynamic tiling window managers is best, I
+must remind my audience at the Free and Open Source Developers
+European Meeting that most of us professionally studying history
+are not software developers. Thus, window managers that require
+deep programming or scripting to customize are not viable. Among
+the many perfectly fine remaining options, the ubiquitous i3wm and
+the lesser-known spectrwm are noteworthy because they have
+human-readable, plain text configuration files, which are almost
+as familiar at first look for a historian accustomed to reading
+ancient lists in ancient languages as I imagine that they are for
+a system administrator accustomed to editing FreeBSD’s beautiful
+kernel configuration parameters.
+
+These are the two window managers that I am going to showcase
+today, using my current workflow—within which I combine the two—as
+a case study. On my desktop, I run i3wm, and on my laptop, I run
+spectrwm. I use my laptop as an extension of my main desktop
+workflow with the open source KVM switch imitator ‘barrier,’ which
+allows me to seamlessly use the same keyboard and mouse with
+both.
+
+Here is my blank i3wm desktop setup on my 27” 4K display. There is
+quite a bit of screen real estate, but smooth workspace switching
+is still helpful. I have my recording tools on Workspace 8, for
+example, to leave 7 Workspaces for what I am about to show.
+
+The center of my workflow is the glorious triad of LibreOffice,
+Firefox, and the citation management tool Zotero, each of which I
+open with a quick keystroke. All that I have to do is type
+MOD+CTRL+Z to open Zotero, then MOD+CTRL+L to open LibreOffice,
+and finally MOD+SHIFT+F to open Firefox. There are many ways to
+automate this in most tiling window managers, including i3, but I
+find that I like to open each application window on my own—just a
+little less automation for the sake of being able to decide
+exactly what I would like to have running during a given study
+session.
+
+I do all of my writing in LibreOffice Writer (Still branch) with
+light text on a dark background. As an example, here is my
+presentation for today.
+
+I use extensions for LibreOffice to help with spellchecking my
+various research languages. The Ancient Greek extension deserves
+special praise for its wide array of features and decent accuracy
+with the range of Greek that I need to quote (from Koine to
+Byzantine). The Latin, French, and German dictionaries that I have
+installed are all quite helpful, as well. (Thousands of extensions
+and templates for LibreOffice are available in the official
+repository.)
+
+It might sound obvious to use Firefox (as probably almost everyone
+here does), but there is more to it when it comes to scholarship
+than simply using a good Web browser. Extensibility is what makes
+Firefox amazingly powerful for academic research and writing. I
+have 13 extensions and 9 userscripts installed in Firefox on my
+desktop, most of which help me with work in some way. These
+include tweaks for the Desire2Learn learning management system
+that my university uses, Markdown Here so that I can write most
+HTML5 messages in plain Markdown, Refined GitHub to help me
+navigate resources on everybody’s favorite octocat, and more. For
+dissertation writing, the official Zotero extension and LeechBlock
+are two of the most important extensions. The former pairs my Web
+browser with my citation management tool, and the latter helps me
+stay focused on the task at hand rather than wasting time on
+multimedia websites.
+
+Zotero handles Chicago Style Notes and Bibliography (Humanities)
+citations quite well. The official Zotero extensions for Firefox
+and LibreOffice work together so smoothly, in fact, that
+occasionally I am able to add an entry to my dissertation’s
+running list of works cited from my home institution’s library
+website in Firefox with one click and then actually cite it in the
+target location with one more. Otherwise, I might have to spend a
+few minutes with cleanup inside Zotero, but then I do not have to
+worry about the particular source being cited properly for the
+rest of the dissertation—save odds and ends like dashes,
+semicolons, and italics.
+
+Beyond LibreOffice, Firefox, and Zotero, each scholar will need to
+use his/her own specific research tools. I have found GitHub and
+GitLab to be the best places to search for them. I am specifically
+a historical theologian, which means that I study Catholic
+theology in history. Thus, I often run searches to see what kinds
+of utilities people are writing for theology, religion, etc. For
+anyone who might be interested to read what my favorite projects
+of that kind are, please feel free to visit the “awesome-theology”
+list that I have made on GitHub.
+
+One of many things that is specific to my work is the need for
+aids for analyzing different translations of various parts of the
+Bible. I use both graphical user interface and command line
+interface biblical study tools. For GUI, I use either BibleTime or
+Xiphos, depending on whether I am using a mostly Qt or mostly GTK
+setup, respectively. At the core, BibleTime and Xiphos are both
+GUI frontends for the SWORD Project.
+
+Here I am showcasing BibleTime. There is nothing quite like having
+Greek, Latin, German, and English versions of a particular passage
+open side-by-side for comparison with the ability to copy and
+paste any of the text. I keep the CLI tools permanently open on my
+laptop.
+
+Here is my typical window configuration in the simple spectrwm
+installation that I have on my laptop, pulled up by trusty old
+x11vnc.
+
+You will see that I have three CLI Bibles open: grb, “Greek
+Bible,” which contains the full texts of the Septuagint and the
+Greek New Testament – for example, here is Mark 1; vul, which
+contains the full text of the Vulgate Latin Bible; and kjv, which
+contains the full text of the King James Version (English Bible).
+
+I also make extensive use of William Whitaker’s Words, an old,
+trusted Latin word parsing tool that is kept alive by a dedicated
+group of users and developers in one central GitHub repository.
+
+Finally, I have various shell aliases on both systems to launch
+what I need automatically. For example, if I need to open St.
+Thomas Aquinas’s opera omnia (complete works) in the elinks CLI
+Web browser (hosted locally), I simply type ‘tom.’ If I need to
+open ranger directly to the file directory in which I keep all of
+my dissertation documents, I type ‘diss.’ A minute saved here, a
+few seconds saved there, and by the end of the day, I have saved
+enough time to accomplish a little task that I otherwise would not
+have been able to accomplish.
+
+Minus the fact that I am required by circumstances at my home
+institution to use Microsoft Teams for communication, my
+historical research and writing software toolkit is 100% libre.
+Moreover, it is highly efficient—not despite the fact that, but,
+rather, precisely because all of its contents are free and open
+source software. Being able to customize every piece of software
+in my toolkit means that I can make it my own toolkit,
+specifically optimized for my own work.
+
+For the next 3 minutes, I will respond to questions. Please feel
+free to ask anything that you might like to ask. Thank you.

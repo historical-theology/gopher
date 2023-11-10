@@ -1,0 +1,212 @@
+For remote instruction, faculty and administrators at Catholic
+institutions should turn to free & open source software
+
+May 20, 2020
+Corey Stephan
+
+A few days ago, Zoë Kooyman, Program Manager for the Free Software
+Foundation, posted an article titled “Remote education does not
+require giving up rights to freedom and privacy.” Yet at many
+colleges and universities, proprietary (nonfree) software is the
+norm for remote learning and out-of-classroom communication:
+Microsoft Teams, Google Docs, Desire2Learn (D2L), Zoom, the
+Respondus Lockdown Browser (which is straightforwardly malware),
+and a long list of names that are familiar for anyone who works in
+higher education. Those of us who work at Catholic institutions
+are as guilty of breaching our students’ software freedom as our
+peers elsewhere, since we rely on the same products.
+
+Software of that kind is definitionally not in keeping with the
+Free Software Foundation’s “Free Software Definition,” including
+the core “four essential freedoms”:
+
+The freedom to run the program as you wish, for any purpose
+(freedom 0).
+
+The freedom to study how the program works, and change it so it
+does your computing as you wish (freedom 1). Access to the source
+code is a precondition for this.
+
+The freedom to redistribute copies so you can help others (freedom
+2).
+
+The freedom to distribute copies of your modified versions to
+others (freedom 3). By doing this you can give the whole community
+a chance to benefit from your changes. Access to the source code
+is a precondition for this.
+https://www.gnu.org/philosophy/free-sw.html
+
+Perhaps most disconcertingly, the freedom that is “a precondition”
+for freedoms 1 and 3, preceding even freedom 0—namely, “access to
+the source code“—is nowhere to be found. Rephrased, since the
+software applications that many of us are required to use are not
+open source, they lack the most basic software freedom.
+
+Using software that is not open source for distance learning
+causes at least three major problems:
+
+Reduced security. Cloud-based proprietary services for remote
+learning store sensitive information in off-campus server
+clusters, sometimes running multiple layers of closed source
+software (e.g. D2L installed on Windows Server in a virtual
+machine that is managed by VMWare). For an example of a popular
+closed source application that is notoriously insecure, see Zoom.
+Security holes in open source projects tend to be found and closed
+more rapidly than holes in their closed source counterparts; it is
+always better to have more eyes looking at the code. That is part
+of why OpenBSD’s developers are able to boast (and rightfully so)
+at the top of their home page: “Only two remote holes in the
+default install, in a heck of a long time!”
+Lack of privacy. Proprietary software applications for
+communication can (and sometimes do) include spyware and other
+malware. With distance learning, the preponderance of sensitive
+materials makes institutional spyware particularly concerning.
+Without access to the source code, spyware cannot be identified
+and refuted. One must run the spyware without any way of knowing
+that he/she is running it, except when it manifests itself
+plainly. One such manifestation comes to me when Microsoft issues
+its automatic monthly report summarizing every virtual interaction
+that I have had in my institution’s digital sphere. (“MyAnalytics”
+reports can be disabled, but the personal data collection and
+storage that enables the creation of the reports cannot. Thus, it
+might be best to leave the reports themselves enabled in order to
+have some sense of what Big Brother is tracking.)
+Hindered learning. If students and faculty cannot “study how [a]
+program works” (freedom 1), then they cannot learn from it.
+Paradoxically, computer science students are required to use long
+lists of software—written in thousands upon thousands of lines of
+code—from which they cannot learn anything about coding.
+
+It might not seem that this has anything to do with Catholicity.
+After all, the Catholic Church does not (to the best of my
+knowledge) have a doctrine about software ethics. A subject as
+rapidly changing as computer programming is a poor candidate for
+permanent direction from a stable Mother who evolves century to
+century rather than week to week.
+
+Sed contra, we must not forget Canons 793 through 795, which
+famously summarize our responsibilities as Catholics with regard
+to education. The spirit that lies behind or the link between
+those Canons is that a Catholic education should be accessible for
+as many students as possible.
+
+Free and open source software provides one clear way—even if
+modest (compared to the great hurdle of tuition, for example)—to
+assist us in achieving that lofty goal. Not only is it free as in
+freedom (the meaning of free in the phrase “free software,” often
+said in the French libre), but it is also free as in no cost. With
+a legal requirement (Can. 794 §2) from Mother Church for “pastors
+of souls” to make “all possible arrangements so that all the
+faithful may avail themselves of a catholic education,” it becomes
+difficult to justify requiring any software program that is not
+able to be run on a diversity of devices and operating systems
+but, rather, requires an expensive, closed environment. Any
+program that is only capable of running in Windows 10 64-bit on
+new hardware rather than being able to run natively also in
+GNU/Linux and the BSDs on second-hand computers (still sometimes
+32-bit) and/or low cost ARM-based systems is not truly accessible.
+During an acute economic recession, hardware accessibility should
+be an even greater concern than it is under normal circumstances.
+
+There is also something to be said for the permanence of open
+standards. Part of why scholars at the Vatican Library chose the
+Flexible Image Transport System (FITS) for the gargantuan project
+of digitally preserving over 80,000 manuscripts is precisely that,
+as an open standard, it will never go obsolete (see, for example,
+this archived article from 2010). To paint the matter as starkly
+as possible (hyperbolically, no doubt), whereas a .docx file (a
+word processing file saved in Microsoft’s current proprietary
+format) might not be accessible in 50 or 100 years, a .odt file (a
+word processing file saved according to the OpenDocument Format
+standard) surely will be readable at that time. A 20-something
+student who writes a reflection essay on Book VIII of St.
+Augustine’s Confessions in 2020 ought to have no doubt that she
+will be able to reopen that document when she is in her 80s—say,
+in 2080—without difficulty.
+
+Faculty and administrators at Catholic institutions have a
+responsibility—perhaps, I dare suggest, a moral imperative—to
+employ free and open source software. That responsibility becomes
+particularly clear during a time when we are all involved in
+remote instruction as a temporary means of survival. At this
+moment, we have a unique opportunity to reevaluate our software
+choices. Let us not allow that opportunity to be wasted. Moving
+forward, we ought to use only free and open source software.
+
+Of course, it would be unreasonable to expect any IT team to
+overhaul a core system overnight. I do not mean to suggest that an
+institution should transition from Desire2Learn or another
+proprietary Learning Management System (LMS) to Canvas or Moodle
+by the end of the COVID-19 pandemic. Yet there is considerable
+good that all of us can do right now with little to no work.
+
+We can start by encouraging colleagues and students to switch to
+free and open source software for communication, document sharing,
+word processing, and other quotidian tasks. Let us move from Zoom
+to Jitsi Meet, Teamspeak to Mumble, Microsoft Teams or Slack to
+Rocket.Chat or Riot.im, and Microsoft Office 365 or Google Docs to
+LibreOffice (which is now available for online collaboration as
+LibreOffice Online). For a fuller list of free software for remote
+communication, see LibrePlanet’s “Remote Communication” wiki
+entry. TechRepublic has a short list of general productivity tools
+that are free and open source, and web searches reveal far more.
+
+In addition, we can avoid invasive and otherwise problematic means
+of remote assessment. If a particular type of assessment only
+works with the use of Proctorio, the Respondus Lockdown Browser,
+or another piece of malware whose sole purpose is to spy on
+students while they work in their own homes, then the powers that
+be ought not require or encourage such an assessment. Drew Harwell
+of the Washington Post paints a sobering picture of how invasive
+remote proctoring software can be, and students throughout the
+United States have begun to sign large-scale petitions against it.
+Essays, open book exams, and oral exams by video chat are three
+alternative methods of remote assessment that respect software
+freedom.
+
+Most importantly, we should make clear to everyone—especially
+those who hold positions from which they are able to decide what
+software we are required to use—why free and open source software
+matters. I hope that this post will help.
+
+Deus vos benedicat,
+Corey Stephan
+ 
+Comments
+
+Joel says:    
+July 20, 2021 at 7:59 am    
+
+Thanks for this post. I agree with your call to use free software
+as a moral imperative, though I would not limit to Catholics, but
+extend it to all Christian educators.
+
+You may be interested to read “Copyrights and Copying: Why The
+Laws Should Be Changed” by Vern Sheridan Poythress, Ph.D.,
+Th.D. Dr. Poythress is Distinguished Professor of New Testament
+and Biblical Interpretation at Westminster Theological Seminary in
+Philadelphia; thus he writes as a reformed Christian theologian
+and proponent of free software.
+
+Corey Stephan says:    
+July 27, 2021 at 12:51 pm    
+
+Dear Joel,
+
+Thank you for the thoughtful reply to my post.
+
+I do not purport to have the knowledge to assess moral theological
+imperatives for non-Catholic Christian educators, as I am a
+professional Catholic historical theologian and deeply invested in
+Catholic education. With that said, I hope that much of what I
+write might be applicable in other quarters.
+
+Thank you also for the link to the post by Poythress about a
+parallel topic that is probably of interest to other readers of
+the initial post.
+
+Feel free to write other comments and otherwise participate in my
+website.
+
+Deus te benedicat,
+Corey Stephan

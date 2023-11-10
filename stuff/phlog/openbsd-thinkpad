@@ -1,0 +1,1131 @@
+OpenBSD 7.3 on a ThinkPad X270 (plus my Theological Dotfiles) for
+Scholarly Work
+
+[Since this particular post is a living document with 
+HTML-specific formatting that would be hard to keep
+cross-formatted for Gopher, I am leaving it as a drop-in
+dump of the word-wrapped text on purpose -- for now. - Corey]
+
+April 20, 2023
+Corey Stephan
+
+The wallpaper shown in the photograph [on the website] is from
+github.com/linuxdotexe/nordic-wallpapers
+
+Changelog
+
+August 24, 2023: Inserted placeholder note about BibleTime not
+compiling
+May 12, 2023: Updated headset information
+May 11, 2023: Fixed msttcorefonts
+May 4, 2023: Updated docking section
+May 3, 2023: Added note on acceptance of textproc/sword and
+started section on docking
+
+Table of Contents
+
+Tutorial or Personal Notes for Public Consumption?
+Why did I choose this X270 and OpenBSD?
+OpenBSD on X270 Hardware Compatibility Checklist (imitating jcs’s
+style)
+Installation from USB Flash Drive
+Initial Setup
+Power Management
+Root Access for [user]
+Simple Performance Improvements
+Join Wi-Fi Networks Automatically
+Enable Audio & Video
+Follow OpenBSD -current (optional)
+Fetch the Ports Tree (optional)
+Software: Dotfiles Prerequisites
+Pre-built Packages
+Other Key Applications: yadm, Kvantum, etc.
+Fonts
+Theological Dotfiles Setup
+Additional Software
+sword and BibleTime (Qt) or Xiphos (GTK) Bible Study Tools
+KBibTeX and Kile or Lyx for Academic Writing
+0 A.D.
+USB-C Docking
+How well does it all fit together?
+
+Tutorial or Personal Notes for Public Consumption?
+
+This tutorial (for lack of a better name) is an expanded and
+polished form of my personal notes on how to install OpenBSD and
+configure my Theological Dotfiles on a Lenovo ThinkPad X270. I
+hope that these notes will help at least one other person
+configure OpenBSD for mobile research and writing.
+
+Although these notes probably would be helpful (to varying
+degrees) for persons using a variety of laptop computers for
+mobile research and writing, they will be the most relevant for
+other persons using ThinkPads from circa 2015-2019, especially
+models with hardware specifications that are similar to those of
+the X270. Examples include the X260, X280, T460/T560, T470/T570,
+T480/T580, T490/T590, and the various X1 Carbons from the same
+model years.
+
+I do not intend for these notes to be comprehensive, nor do I
+guarantee the accuracy and/or utility of anything contained within
+them. For one example of a complication, my dotfiles currently
+require manual interventions that vary from hardware setup to
+hardware setup. (In the future, I might explore automation options
+with scripting and/or the creation of separate git branches for
+different operating systems and/or hardware configurations.)
+
+Accordingly, instead of recommending that the reader put full
+faith in what I have written here, I humbly point him/her to the
+following sources. I have used all of these to prepare my own
+setup notes:
+
+For a full-length introduction to OpenBSD, including a detailed
+installation guide, everyone ought to turn to the official OpenBSD
+Frequently Asked Questions (FAQ) document. The FAQ is OpenBSD’s
+meticulously curated handbook. It is accessible either for online
+reading at openbsd.org/faq or for offline reading by downloading
+it from OpenBSD’s CVS or the GitHub mirror (for example, one may
+use git clone https://github.com/openbsd/www to have the whole
+website accessible for local reading in any Web browser).
+OpenBSD’s internal manual pages (“man pages”) have been built to
+be as close to comprehensive as possible. The FAQ routinely points
+the reader to the man pages for richer documentation. Whenever
+OpenBSD documentation says “item(#),” that is a reference to the
+manual’s entry at category #, entry item, which may be accessed at
+the terminal inside OpenBSD by typing man # item (e.g. man 1 man
+to show the man page’s man page, man(1)).
+For anyone looking to run OpenBSD on any laptop, especially a
+ThinkPad, I recommend Keith Burnett’s excellent — and always
+up-to-date — “Running OpenBSD [#] on your laptop” webpage. I have
+drawn from that webpage at least as much as the FAQ to help me
+compile this (alternative and personalized) tutorial.
+
+Finally, I share two other helpful blogs. First, the longtime
+OpenBSD developer Joshua Stein’s (jcs) “OpenBSD on Laptops” series
+inspired the format and style of this post. Second, I used Patrick
+Bucher’s “OpenBSD on the Desktop (Part I)” blog post, which is
+specifically about installing OpenBSD on a ThinkPad X270, as my
+initial source to make sure that OpenBSD and the X270 would pair
+well before purchasing the X270.
+
+If you happen to find anything that I should change or improve,
+please let me know by leaving a comment.
+Why did I choose this X270 and OpenBSD?
+
+In March 2023, I purchased a Lenovo ThinkPad X270 for mobile
+academic research and writing. For at least six months before
+actually making the purchase (I have no choice but to be patient
+while waiting for Wife Approval), I had kept an eBay search saved
+in hope of finding one with both a 7th generation Intel Core
+processor (rather than 6th generation, since the 7th generation
+includes USB-C docking and some other key niceties) and (more
+importantly for my purposes) the 1080P IPS display, i.e. the best
+panel ever shipped with this particular chassis. Finally, one
+appeared from FreeGeek Portland, a non-profit that specializes in
+refurbishing older computers (among other delightful things).
+
+For my intended use case of truly mobile research and writing, the
+X270 has a huge range of advantages over other small laptops from
+the past 5-10 years, including:
+
+full user hardware repairability rather than locked down
+hardware
+both a replaceable internal battery and a hot-swappable external
+battery (that may be upgraded to a larger size) rather than an
+internal and non-replaceable battery
+a familiar, comfortable ThinkPad keyboard with full-size keys,
+proper key spacing, and the famous Trackpoint rather than a
+condensed, uncomfortable keyboard
+lots of physical ports, including USB-C, USB-A, and RJ-45
+(“ethernet”) rather than only 1-2 physical ports and no RJ-45 jack
+at all
+a lovely 1080p IPS display rather than a lousy panel that is not
+suited for long hours of reading and writing
+known hardware compatibility with OpenBSD, FreeBSD, and GNU/Linux
+rather than non-standard hardware configurations that do not work
+with anything other than designated proprietary operating systems
+
+OpenBSD on X270 Hardware Compatibility Checklist (imitating jcs’s
+style)
+
+I have copied this table’s basic format from the one that Joshua
+Stein (jcs) uses in his “OpenBSD on Laptops” blog series, basing
+this checklist specifically on his “OpenBSD on the Lenovo ThinkPad
+X1 Carbon (5th Gen)” post (since that device is from the same
+model year as the X270 and contains overlapping hardware):
+Component    Works?    Notes
+Audio    Yes    Intel audio output and input are supported by the
+built-in azalia(4) driver.
+
+Speaker output works by default.
+
+OpenBSD’s audio system defaults to an incorrect sound input
+selection that was difficult for me to correct as a newcomer to
+tinkering with sound server settings. Presumably, this has
+something to do with Lenovo not quite using a standard internal
+microphone configuration. In any event, by reading various Web
+posts and the mixerctl(8) man page, I was (eventually) able to get
+the built-in microphone to work flawlessly only by changing the
+default recording device to the real one. (If you should have a
+similar problem, be sure to start by reading the mixerctl man
+page.) To have the internal microphone work permanently on my
+machine, all that I need is 1 line in mixerctl.conf(5):
+
+record.adc-0:1_source=mic
+
+After making that change, both speaker output and microphone input
+levels can be controlled easily with the third-party terminal user
+interface (TUI) utility cmixer (pkg_add cmixer).
+
+For security, microphone input may be disabled in the BIOS.
+
+Also, I submitted a report about the incorrect microphone
+defaulting to bugs@openbsd.org.
+Battery status    Yes    Total battery charge may be shown with
+the command apm (for apm[4]). Both the internal and external
+battery are supported by acpibat(4), so showing detailed
+information about both (together with a few other key system
+hardware sensor readings, such as CPU temperature) is as simple as
+typing sysctl hw.sensors (see sysctl[2]).
+Bluetooth    No    The Bluetooth chip appears as a ugen(4) device,
+but OpenBSD does not have any Bluetooth support.
+
+For security, the Bluetooth chip may be disabled in the BIOS. With
+OpenBSD, which does not have a Bluetooth stack, anyway, it makes
+sense to disable the Bluetooth chip entirely.
+Ethernet    Yes    The RJ-45 jack is supported out-of-the-box by
+the built-in em(4) driver.
+Fingerprint sensor    No    The fingerprint sensor is presumably
+Synaptics via USB. Yet, OpenBSD does not support fingerprint
+sensors.
+
+For security, the fingerprint sensor may be disabled in the BIOS.
+With OpenBSD, which does not have any support for fingerprint
+sensors, anyway, it makes sense to disable the fingerprint sensor
+entirely.
+Keyboard backlight    Yes    The keyboard backlight works properly
+out-of-the-box. It can be toggled with Fn+Space and/or
+wsconsctl(8) with the wsconsctl keyboard.backlight values of 0,
+50, and 100.
+Hibernation    Yes    Hibernation works out-of-the-box with
+ZZZ(8), which is a shortcut for apm -H (see apm[4]).
+Suspend / resume    Yes    Suspend and resume work out-of-the-box.
+Touchpad    Yes    The Synaptics touchpad is supported
+out-of-the-box by the built-in pms(4) driver.
+TrackPoint    Yes    The TrackPoint is supported out-of-the-box by
+the built-in pms(4) driver.
+
+To enable scrolling with the TrackPoint and the middle Touchpad
+button, I use the following three lines in my simple
+start-openbsd.sh script that I have set to open automatically in
+.config/spectrwm/spectrwm.conf (depending on when I have cloned my
+repository, I might simply have to change start-*.sh to
+start-openbsd.sh specifically — also, I almost always have to do a
+simple chmod +x on the autostart shell script to make it
+executable during initial setup):
+xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1 &
+xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button"
+2 &
+xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6
+7 4 5 &
+
+To increase the TrackPoint’s speed to an acceptable level, I
+include the following line in the same place:
+xinput set-prop "/dev/wsmouse" "Device Accel Constant
+Deceleration" 0.25 &
+
+The most commonly recommended value for the deceleration constant
+seems to be 0.3, but that is a tad too slow for me. 0.2 is too
+swift. 0.25 is my sweet spot.
+USB    Yes    The USB-A and USB-C ports work.
+Video    Yes    Everything that one would expect to have work with
+video works out-of-the-box via the automatically installed
+inteldrm(4) driver, which provides accelerated video, DPMS, gamma
+control, integrated backlight control (even using the backlight
+control keys on the keyboard), and proper S3 resume. The onboard
+HDMI port works for HD video output, too.
+Webcam    Yes    After enabling video input at the kernel level
+with the line kern.video.record=1 in /etc/sysctl.conf and granting
+$USER ownership of the device (both of which I show below), the
+webcam works as expected via the built-in uvideo(4) driver.
+
+For security, the webcam may be disabled in the BIOS.
+Wireless    Yes    The removable Intel Wi-Fi AC card works
+out-of-the-box with the automatically installed iwm(4) driver.
+Installation from USB Flash Drive
+
+These notes assume that the reader has the official OpenBSD FAQ
+and OpenBSD manual pages on-hand.
+
+I have a 16GB USB-A 3.0 flash drive on which I have flashed the
+latest OpenBSD miniroot.img (~5mb flash drive image file for
+downloading the OS itself during installation), which I have
+fetched from the OpenBSD download webpage. I have both an A/C
+adapter and a live STP cable (a.k.a. “ethernet” or “network”
+cable) plugged into the X270. The network cable is especially
+important, since Wi-Fi only will become accessible after the Wi-Fi
+driver has been installed automatically during the first boot
+after installation, and having WAN (“Internet”) access during
+installation is necessary when using the miniroot image.
+
+After booting from the flash drive with UEFI, I am greeted with
+the following options:
+
+(I)install, (U)pgrade, (A)utoinstall, or (S)hell
+The correct option is “(I)nstall” for a standard, straightforward
+installation (not “[A]utoinstall,” since that is for work
+environments with scripted installations).
+
+Next, I make the following choices, most of which simply involve
+tapping ‘Enter’ to continue with the default and/or automatic
+choice made by the OpenBSD installer:
+
+keyboard layout = [default]
+Perfect for North American ThinkPads
+system hostname = corey-openbsd
+Any hostname will do, but I suspect that “corey-openbsd” will be
+clear for networking purposes without being hard to remember (or
+type).
+Which network interface do you wish to configure? [choices = iwm0
+em0 vlan0] em0
+em0 = RJ-45 (wired ethernet) jack’s interface
+IPv4 address for em0? [autoconf] (default)
+IPv6 address for em0? autoconf (typed)
+My guess is that IPv6 automatic configuration will become the
+default in a future release.
+Which [additional] network interface do you wish to configure?
+[done]
+Password for root account? [something easy to remember but only
+for root]
+Start sshd(8) by default? no (typed)
+The OpenBSD folks are the makers of OpenSSH and rightly like to
+include it as part of OpenBSD.
+For a lightweight mobile workstation, however, the SSH daemon does
+not make sense. I only will use this laptop to make an SSH
+connection into another machine — not to connect to it from
+another machine.
+Do you want the X Window System to be started by xenodm(1)?
+[no]
+Technically, the official OpenBSD documentation recommends using
+xenodm(1), OpenBSD’s own graphical login manager, when one intends
+to use one’s system as a desktop with a graphical environment
+full-time. Yet, I prefer the simplest possible arrangement, which
+is typing startx at the console.
+Change the default console to com0? [no] (default)
+I am not going to be using a serial console in any way whatsoever.
+This is a laptop computer meant to be its own workstation.
+Setup a user? corey
+Full name for user corey? Corey Stephan
+Password for user corey? [something easy to remember but only for
+corey]
+What timezone are you in? [US/Central] (intelligent default when
+connected to WAN)
+Which disk is the root disk? (‘?’ for details) [sd0] (intelligent
+default)
+I always tap ‘?’ to check to make sure that I have the right disk
+selected. The OpenBSD installer is smart enough to detect the only
+machine disk, but it is common sense to be certain that the
+installer is going to overwrite the correct one.
+Encrypt the root disk? (disk, ‘no,’ or ‘?’ for details?
+[no]
+I do not need disk encryption at this time. For a machine with
+sensitive data, however, this guided root disk encryption option
+that is new with OpenBSD 7.3 -release (thanks to this commit from
+Klemens Nanni) would make perfect sense.
+Use (W)hole disk MBR, whole disk (G)PT or (E)dit? [gpt]
+It is 2023. MBR has been outdated for years. I choose GPT every
+time.
+Use (A)uto layout, (E)dit auto layout, or create (C)ustom layout?
+[a]
+OpenBSD has a rather complex default disk partitioning scheme that
+keeps different parts of the system isolated from each other for
+the sake of improved overall system security. Allowing the
+installer to setup the scheme that the system itself expects is a
+good idea for anyone (like me) who likes to avoid headaches.
+Which [additional] disk do you wish to initialize? (or ‘done’)
+[done] (default)
+Location of sets? [http] (default)
+HTTP proxy URL? [none] (default)
+HTTP Server? [cdn.openbsd.org] (default)
+There are many officially recognized OpenBSD Mirrors, but I have
+found that the default cdn mirror even performs better for me (in
+the greater Houston metropolitan area) than the one that is
+located here in Texas.
+Server directory? [pub/OpenBSD/[#.#]/amd64] (default)
+Select sets — Unselect game[##].tgz with -game* but leave
+everything else
+The games are unnecessary. When I wish to play a game, I will
+install it later myself (most likely 0 A.D. with pkg_add 0ad — see
+below). Otherwise, every other set is either necessary or
+otherwise important to have for a graphical desktop.
+Location of [additional] sets? [done] (default)
+Time appears wrong. Set to ‘___’? [yes] (default)
+Exit to (S)hell, (H)alt, or (R)eboot? shell
+Exiting to shell gives an opportunity to remove the flash drive
+before typing reboot.
+
+At first boot, OpenBSD runs the sophisticated fw_update(8) utility
+and installs uvideo, intel, inteldrm, and iwm without me needing
+to perform any interventions. It also prompts me to run
+syspatch(8) to install binary patches. To that end, I login as
+root and execute the following commands, which are generally
+recommended after any first boot:
+
+syspatch      # patches the system
+pkg_add -u    # updates the packages 
+sysmerge -d   # merges any configuration file changes
+
+Next, I type ‘mail’ to see what Mr. Theo de Raadt has sent to me
+to read on my new OpenBSD installation. I like the welcome email,
+and I probably will not use the default mail utility for anything
+other than to skim this and other system announcements (OpenBSD
+sends many), so I type ‘x’ to save it. Then, I type ‘reboot’ again
+to be greeted with my fully up-to-date OpenBSD installation.
+
+Since almost every step above simply involved tapping the Enter
+key to accept a default, the whole installation, including
+downloading all of OpenBSD during the installation itself, took 5
+minutes — 10, if I ought to include downloading the ~5mb miniroot
+image and burning it to a flash drive. Overall, actually
+installing OpenBSD onto an old(er) ThinkPad is the easiest process
+that I have experienced with any operating system, beating
+everything from Microsoft Windows and Apple MacOS to every major
+GNU/Linux distribution and even my beloved FreeBSD. With OpenBSD
+on an old(er) ThinkPad, everything needed for a default sensible
+installation happens in a brilliantly minimalist and
+secure-by-default automatic way.
+Initial Setup
+
+After the first boot with a fully up-to-date OpenBSD installation,
+I login as root in order to perform a few key system configuration
+steps.
+Power Management
+
+By default, OpenBSD expects the system’s BIOS to manage CPU
+frequencies and thermals — even with OpenBSD’s built-in power
+management daemon, apmd(8), enabled. Immediately after receiving
+the laptop, I used geteltorito to prepare Lenovo’s BIOS file for
+writing to a bootable USB flash drive and updated to the latest
+BIOS. (I happened to be working in GNU/Linux, but directions for
+configuring the USB flash drive inside OpenBSD may be found on
+TuM’Fatig’s blog). Yet, evidently, even the latest BIOS does not
+manage CPU power adequately, since the processor reaches
+dangerously high temperatures when doing mundane tasks like
+installing precompiled binary packages in TTY. The good news is
+that it is easy to correct the problem:
+
+Install obsdfreqd.
+Enable apmd(8) with the -L flag to trigger its manual CPU
+performance adjustment mode (leaving the responsibility for actual
+adjustments to obsdfreqd).
+apmd(8) is still useful, if not necessary, for things like
+allowing suspend and resume functionality out-of-the-box on
+ThinkPads.
+Enable obsdfreqd.
+I prefer to use the -T flag to force the low thermal limits of 75
+°C on A/C power and 55 °C on battery power (yes, only 55 °C — I
+have found this to be approximately the lowest maximum temperature
+at which the more demanding regular tasks that I expect the X270
+to handle, such as playing HTML5 videos in Firefox, still work
+properly, meaning that this achieves my own ideal battery
+life-to-performance ratio). Yet, the default settings are supposed
+to perform well for most users on most hardware.
+
+Altogether, the power management configuration process looks like
+this:
+
+pkg_add obsdfreqd
+rcctl enable apmd
+rcctl set apmd flags -L
+rcctl start apmd
+rcctl enable obsdfreqd
+rcctl set obsdfreqd flags -T 75,55   # only if not using
+obsdfreqd's defaults
+rcctl start obsdfreqd
+
+These settings may be adjusted at any time, either with rcctl(8)
+in the terminal or by editing rc.conf.local(8).
+Root Access for [user]
+
+In doas.conf(5), I add the following line to enable root command
+access via doas(1) for [user] (normally me, “corey”):
+
+permit persist [user] as root
+
+doas is dramatically simpler than sudo, but for a single-user
+desktop setup, it achieves the same result. I appreciate that
+OpenBSD has unconfigured (harmless) doas in its default
+installation (ready for easy configuration).
+Simple Performance Improvements
+
+Since OpenBSD is meticulously coded and pre-configured to be
+secure by default, especially in complex server and/or
+router+firewall configurations with many users, it has a few
+out-of-box settings that might not quite be practical for
+single-user desktop work on a system that is unlikely to be a
+deliberate hacking target. There are many guides on the Web for
+tinkering with deep system settings to improve OpenBSD’s desktop
+performance. My opinion, however, is that since OpenBSD is
+designed with security, stability, and code correctness as top
+priorities rather than performance, it does not make sense to use
+OpenBSD rather than another operating system for which performance
+is a top design priority and then try to tune it to perform tasks
+with speed that exactly matches that other operating system.
+Rather, I prefer to try to use a given operating system as it has
+been designed. With that in mind, then, here are the minimalist
+performance improvements that I choose to use.
+
+Disclaimer: Each of these changes might (or does) weaken OpenBSD’s
+security. Use at your own risk.
+
+1. Simultaneous Multi-Threading (smt)
+
+Even with the bsd.mp (multi-core) kernel installed automatically,
+OpenBSD does not use true simultaneous multi-threading, which
+contains major security holes (documented many places elsewhere on
+the Web). In sysctl.conf(5), one line enables this risky
+functionality (see sysctl[2] for details):
+
+hw.smt=1
+
+I have found enabling SMT to have an immediately noticeable
+positive impact on overall desktop performance, especially when
+using resource-intensive applications (such as modern Web browsers
+and LibreOffice). Indeed, this one line in sysctl.conf seems to
+make everything as snappy as I expect on this system’s decent
+hardware. Would that we could trust our CPUs.
+
+2. operator and staff
+
+For a single-user, desktop setup, it also might be useful to add
+[user] to OpenBSD’s built-in group ‘operator’ and class ‘staff.’
+Members of the ‘operator’ group are able to shutdown the system
+without root access. Members of the ‘staff’ class have elevated
+access to system resources, which is reported help prevent
+slowdowns in applications that are hungry for memory:
+
+usermod -G operator [user] # group (for shutdown and other
+elevated privileges)
+usermod -G staff [user]    # group (probably unnecessary for
+'staff')
+usermod -L staff [user]    # login class (for enhanced resource
+allocations)
+
+There are mixed reports across the Web as to whether or not
+manually increasing the system resources available for
+applications used by members of the ‘staff’ class is a good idea.
+In the interest of using the system as close to its ‘as-intended’
+state as reasonable, I have left them at their default values.
+
+On this exact setup, anyway, I have not found adding [user] to the
+‘staff’ class to have any immediately noticeable effects on
+performance. Enabling SMT (see #1) was the more important change.
+Join Wi-Fi Networks Automatically
+
+OpenBSD should call the X270’s Intel Wi-Fi card, which relies on
+the iwm(4) driver that was configured automatically after first
+boot (by fw_update),”iwm0″ (but I double check the name quickly by
+typing “ifconfig” into the terminal). iwm0 may be configured for
+single sessions via ifconfig(8) or repeated, automatic connections
+via hostname.if(5) (in the new, user-created file
+“/etc/hostname.iwm0”). The FAQ’s Wireless Networking section has
+many practical examples of ifconfig and hostname.if being put to
+use, including for scenarios in which the security of hostname.if
+(which stores the WPA passkey in plain text) is insufficient.
+
+Setting the X270 to connect automatically to 2-3 simple Wi-Fi
+networks is all that I need. Accordingly, I create a new
+“/etc/hostname.iwm0” file with only a few lines. The quotation
+marks are only necessary for SSIDs and/or passwords with spaces
+and/or complex symbols, but, for consistency’s sake, I always use
+them:
+
+join "SSID1" wpakey "password1"    # home Wi-Fi
+join "SSID2" wpakey "password2"    # work Wi-Fi
+inet autoconf
+
+Next, I enable iwm0 before starting it for the first time with
+OpenBSD’s built-in netstart(8) script:
+
+ifconfig iwm0 up
+sh /etc/netstart
+
+Enable Audio & Video
+
+OpenBSD has audio and video inputs both disabled by default,
+since, of course, the system is designed to be secure by default.
+Yet, I am more likely to need to use my webcam and microphone than
+to need to avoid someone spying on me, so I enable them.
+
+First, I add the following two lines to sysctl.conf(5):
+
+kern.audio.record=1
+kern.video.record=1
+
+Next, I give regular users access to video devices. This command
+needs to be executed after every system update; I find that it
+works most reliably with doas as the actual user:
+
+chown $USER /dev/video*
+
+Although all of these system configuration changes can be applied
+safely without a reboot (e.g. by using rcctl(8) to enable the
+sysctl changes instead of manually making them inside
+sysctl.conf), I choose to reboot now in order to watch the startup
+log to make sure that everything has applied properly before
+proceeding to install the software that I need. As root, the
+command is reboot. As I predicted, however, all of those changes
+show after a reboot. The system is even already connected to my
+home Wi-Fi network; I check the connection status with ifconfig
+and WAN access status with ping coreystephan.com, and everything
+is right.
+Follow OpenBSD -current (optional)
+
+I am always focused on stability. Yet, OpenBSD’s -current branch,
+its rolling release track, has a reputation for being at least as
+stable as Ubuntu LTS. While such popular anecdotes are hard to
+verify, I do trust the pragmatism of OpenBSD’s developers. A high
+percentage of them use ThinkPads with OpenBSD for their own work
+and, therefore, take care that -current helps rather than hinders
+the experience of using OpenBSD on this type of hardware. Beside,
+at the time of writing, I am looking ahead to presenting at BSDCan
+2023 in about four weeks time, and running -current will make sure
+that I am matching most (if not all) of the folks who will be
+using and discussing OpenBSD there.
+
+Once a fresh OpenBSD installation has been updated and had its
+basic settings adjusted, switching to -current is as easy as using
+the -s (snapshot) flag with sysupgrade(8), which triggers a system
+reboot and automatic full upgrade of sets, and then updating
+packages before (optionally) forcibly merging any configuration
+file changes:
+
+sysupgrade -s
+pkg_add -u
+sysmerge -d    # optional merger of configuration file changes
+
+When following -current during beta periods (normally, the last
+few weeks before a new OpenBSD -release), pkg_add(1) will require
+the -Dsnap flag (which forcibly draws packages meant for the
+latest snapshot) for all commands. For example, to install Firefox
+ESR at such a time, I would need to type:
+
+pkg_add -Dsnap firefox-esr
+
+During beta periods, reminders about the need for -Dsnap for folks
+who are following -current are posted in all the major OpenBSD
+communication zones.
+Fetch the Ports Tree (optional)
+
+As a rule, OpenBSD’s developers strongly recommend installing all
+software as pre-compiled binaries with pkg_add(1). Fetching the
+Ports Tree is necessary, however, for installing Microsoft True
+Type Fonts (Times New Roman, Arial, etc.) and other items that
+cannot legally be pre-packaged. For up-to-date information about
+fetching the Ports Tree and working with ports, see the Working
+with Ports section of the OpenBSD FAQ. Here, I simply duplicate
+(from the FAQ) the commands for fetching the ports tree, verifying
+its signature, and unpacking it:
+
+cd /tmp
+ftp https://cdn.openbsd.org/pub/OpenBSD/$(uname
+-r)/{ports.tar.gz,SHA256.sig}
+signify -Cp /etc/signify/openbsd-$(uname -r | cut -c 1,3)-base.pub
+-x SHA256.sig ports.tar.gz
+cd /usr
+tar xzf /tmp/ports.tar.gz
+
+When following -current, I replace $(uname -r)with snapshots to
+download the most up-to-date Ports Tree, and I make sure to rerun
+these steps after every sysupgrade(8) to a new snapshot so that
+the Ports Tree is always in alignment with my system. Running
+these steps does not override any custom ports that I might have
+in ports/mystuff (see below).
+Software: Dotfiles Prerequisites
+
+This is the core set of software applications upon which my
+Theological Dotfiles rely.
+Pre-built Packages
+
+On a fresh OpenBSD 7.3 installation (with all sets except
+game[##].tgz, I can run the following command as root to install
+most of what I need for my Theological Dotfiles (arranged
+alphabetically):
+
+pkg_add alacritty bash cmixer conky fff firefox-esr fish git
+hack-fonts libreoffice lxappearance micro mupdf nitrogen
+pcmanfm-qt picom ranger qt5ct rclone rclone-browser redshift rofi
+spectrwm unzip
+
+Other Key Applications: yadm, Kvantum, etc.
+
+1. Yet Another Dotfiles Manager (yadm)
+
+Yet Another Dotfiles Manager (yadm) is the shell script that I use
+to manage my dotfiles. It is not currently in OpenBSD’s Ports, but
+it is easy to install in OpenBSD (requiring only curl and bash):
+
+curl -fLo /usr/local/bin/yadm
+https://github.com/TheLocehiliosan/yadm/raw/master/yadm
+chmod a+x /usr/local/bin/yadm
+
+2. Kvantum
+
+My Theological Dotfiles rely on consistent Qt5 theming, and
+Kvantum is what I use to achieve that theming. Surprisingly, this
+widely popular tool is not yet in OpenBSD Ports, but as with yadm,
+installation is still easy in OpenBSD. The build requirements for
+Kvantum in OpenBSD are gcc, qt5, kwindowsystem, and CMake. Here is
+the full installation process:
+
+pkg_add gcc qt5 kwindowsystem cmake
+git clone https://github.com/tsujan/Kvantum
+cd Kvantum/Kvantum
+mkdir build && cd build
+cmake -DCMAKE_PREFIX_PATH=/usr/local/lib/qt5/cmake/ ../
+make
+make install
+
+Fonts
+
+1. Hack Nerd Font
+
+Hack Nerd is the backbone of my Theological Dotfiles; I use it
+with fanatical consistency. To install it, I download the latest
+Hack.zip from nerd-fonts GitHub Releases, unzip the directory,
+copy the fonts to /usr/local/share/fonts, and update the system’s
+font cache.
+
+[Download Hack.Zip & cd to containing directory]
+unzip Hack.zip
+cp /Hack/*.ttf /usr/local/share/fonts/
+fc-cache
+
+2. Microsoft True Type Fonts
+
+With the Ports Tree fetched and prepared, these three two commands
+are all that I need to type in order to install Microsoft’s True
+Type Fonts (Times New Roman, Arial, etc.):
+
+pkg_add cabextract     # massive build unless installed as package
+cd /usr/ports/fonts/msttcorefonts
+make install
+
+Theological Dotfiles Setup
+
+With everything above installed, it is time to switch from root to
+[user] and run yadm in /home/[user]:
+
+cd
+yadm clone
+https://github.com/historical-theology/theological-dots
+
+The yadm script is helpful, but it is not perfect. I have to
+perform several manual interventions, notably:
+
+This step is prone to hang on “Resolving deltas: 100% …” If that
+should happen, tap CTRL+C to terminate the process. Then, type
+yadm checkout master to forcibly finish the cloning process.
+There is a tendency for the cloning to fail to retrieve everything
+inside the very large .icons and .themes folders. Accordingly, I
+make a habit of manually downloading the whole repository to its
+own folder and copying .icons and .themes to the locations where
+they belong. This allows kvantum and lxappearance to do their
+jobs, applying consistent Nord theming across both Qt and GTK GUI
+applications, respectively.
+Odds and ends such as DPI (90 is best for me on the X270 with the
+1080p display) and the exact conky settings (see .conkyrc-openbsd
+in my repository for a sample that works well in OpenBSD on a
+ThinkPad), are impossible to have be truly portable. I am
+considering dividing the repository into separate branches — one
+for OpenBSD on my ThinkPad, another for a desktop with a 4K
+monitor, and so on. Without that division, however, spending a
+short while making manual interventions with such pieces is an
+annoying necessity.
+
+Additional Software
+SWORD and BibleTime (Qt) or Xiphos (GTK) Bible Study Tools
+
+The team behind Aprendiendo de Jesús (adJ), “A Distribution of
+OpenBSD to Promote the Construction of the Kingdom of God from
+Education and Respect for Human Dignity” (translated from Spanish)
+has made solid ports of the CrossWire Bible Society’s SWORD
+utility, as well as the popular BibleTime (Qt) and Xiphos (GTK)
+graphical user interfaces (GUIs) for it. In April, I duplicated
+these entries from adJ’s repository into a new
+historical-theology/ports-mystuff repository to prepare them for
+submission upstream to the official OpenBSD Ports Tree. Thus far
+(as of May 3), thanks not only to the loving labors of the adJ
+team but also the careful attention of Stuart Henderson (sthen@)
+and Omar Polo (op@) in the ports@openbsd.org mailing list thread
+that I opened, I have succeeded in having textproc/sword imported
+into the official OpenBSD Ports Tree.
+
+Accordingly, I may install SWORD this simply:
+
+pkg_add sword
+
+Next, at least for now, I may install BibleTime like so (making
+sure to wait 10 minutes or longer to let the build run its course
+on the X270’s i7-7600u):
+
+git clone https://github.com/historical-theology/ports-mystuff
+cd ports-mystuff/ && cp -r mystuff/ /usr/ports/mystuff
+cd /usr/ports/mystuff/textproc/bibletime
+make install
+
+Then, I may type “bibletime” to open the tidy GUI.
+
+[NB — August 24, 2023: BibleTime compilation is not currently
+working properly.]
+KBibTeX and Kile or Lyx for Academic Writing
+
+When I first started the process of installing OpenBSD on this
+ThinkPad, I was disappointed to find that there was not a modern,
+fully featured citation (reference) manager available in the
+official OpenBSD package collection (or Ports Tree). I took to the
+misc@openbsd.org mailing list with this post, which received
+several replies. Initially, however, those replies did not take me
+any closer to a viable GUI writing environment. Zotero and JabRef,
+the two main options, are both non-compilable in OpenBSD (Zotero
+relies on xul, and JabRef relies on OpenJFX, but OpenBSD has
+neither).
+
+Yet, following some private correspondence between the OpenBSD
+project’s KDE guru Rafael Sadowski and me, Sadowski most
+generously added KBibTeX, the KDE project’s citation manager, to
+the large set of KDE applications that he has ported to OpenBSD
+(with this post to ports@openbsd.org). KBibTeX officially supports
+the LaTeX editors Kile (also of the KDE project) and Lyx (which is
+popular on many platforms). Further, as a longtime Zotero user, I
+am pleased that KBibTeX allows importing Zotero bibliographies.
+(Granted, the Zotero syncing feature does not work in OpenBSD,
+since it requires having Zotero installed on the local system — a
+frustrating chicken and egg situation).
+
+Installing all 3 applications in OpenBSD -current is as simple as
+this:
+
+pkg_add kbibtex kile lyx
+0 A.D.
+
+As of the time of writing this tutorial, I have multiple formal
+academic matters in the works (a conference presentation, a peer
+reviewed journal piece, and various classroom activities in the
+Greek class that I am teaching) about the world-class open source
+historical multiplayer real-time strategy warfare game 0 A.D.
+Aside from needing 0 A.D. for my work, I also rely on it for
+relaxation.
+
+In OpenBSD -current, installation of the most recent version of 0
+A.D. is this easy:
+
+pkg_add 0ad
+
+In OpenBSD – release or -stable, sometimes the pre-compiled binary
+will be up-to-date, whereas other times it will be outdated
+(normally, no more than one version behind the most recent).
+pfetch
+
+Finally, it is time for a silly, little system fetch tool, namely,
+pfetch. For OpenBSD, installation is a breeze:
+
+git clone https://github.com/dylanaraps/pfetch
+cd pfetch
+chmod +x pfetch
+cp pfetch /usr/local/bin/pfetch
+
+Now that I have pfetch installed, I add the word “pfetch” to the
+end of the “Prompt” section that I have demarcated in
+~/.config/fish/config.fish inside my Theological Dots for a clean
+pfetch to remind me that I am running OpenBSD every time that I
+open my terminal emulator.
+USB-C Docking
+
+I have an official Lenovo ThinkPad Universal USB-C Dock (40-AY)
+that I have used for many months to connect my other ThinkPad, a
+T590, to a wired STP (“ethernet”) connection, 27″ 4K IPS monitor,
+Ducky One mechanical keyboard, nice Logitech mouse, Logitech G933
+USB headset, Logitech Brio 4K webcam, and Blue Yeti microphone —
+all with only one cable plugged into the laptop while using a
+standard GNU/Linux distribution (EndeavourOS at the time of
+writing).
+
+I am happy to report that with OpenBSD 7.3 on the ThinkPad X270,
+nearly everything either works by default or with an easy system
+toggle.
+
+To switch audio output between the built-in speakers and my
+wireless USB headset, all that I need to do is toggle the correct
+sndioctl(1) setting:
+
+sndioctl server.device=0          # built-in speaker
+sndioctl server.device=1          # USB headset
+
+Then, I may adjust the volume levels with cmixer or either
+device’s own physical volume adjustment mechanisms (F2 and F3 on
+the ThinkPad or the volume wheel on the headset).
+
+To accept audio input from the same headset, I switch the entire
+mixer device to the headset and unmute its microphone like so (see
+mixerctl[8]):
+
+mixerctl -f /dev/audioctl1 inputs.record_mute=off
+
+To use the Logitech Brio 4K webcam, I first make sure that [user]
+has control of it (see “Enable Audio and Video” above):
+
+doas CHOWN $USER /dev/video*
+
+Per the FAQ sub-section “Using a Webcam,” I must give permission
+to Firefox and/or ungoogled-chromium to use the external webcam.
+This is in accordance with OpenBSD’s unveil(2) security feature by
+which applications only have access to explicitly allowed
+directories. I have found that both Web browsers sometimes become
+confused about whether to use the internal webcam or the external
+one, so (for lack of a cleaner solution) it is easiest to disable
+access to the internal one while docked temporarily (with a simple
+“#” to exclude). Altogether, inside etc/firefox/unveil.main and/or
+/etc/ungoogled-chromium/unveil.main, I make sure to have the
+following set while docked:
+
+# /dev/video rw    # disallowed system default
+# /dev/video0 rw   # disallowed internal webcam
+/dev/video1 rw     # allowed Logitech Brio
+
+All that I have to do is uncomment /dev/video and /dev/video0 when
+undocked.
+
+What I do not have working, as of the May 12 update that I am
+making to this tutorial, is the Blue Yeti microphone. Admittedly,
+I only have spent a few minutes looking at the situation. I hope
+to update this tutorial with fixes in the (near) future.
+
+Here is a tidy Lenovo ThinkPad Universal USB-C Dock (40AY)
+compatibility checklist for OpenBSD 7.3 on the X270:
+Component    Works?    Notes
+STP / Ethernet    Yes    Automatic
+Keyboard    Yes    Automatic
+Mouse    Yes    Automatic
+Monitor    Yes    Concurrent 4K output to external display and
+1080p output on built-in display
+USB Headset Output    Yes    sndioctl server.device=1 (see above)
+USB Headset Input    Yes    mixerctl -f /dev/audioctl1
+inputs.record_mute=off (see above) (*tested in T590 rather than
+X270)
+Logitech 4K Brio Webcam    Yes    /dev/video1 (see above)
+Blue Yeti Microphone    No*    (*More exploring required)
+
+Not being able to use the Blue Yeti microphone in OpenBSD would
+prohibit me from using OpenBSD as the operating system at my
+stationary (desk) setup, which I use, among other things, for
+recording class video lectures. Yet, knowing that OpenBSD handles
+docking well overall might prove useful for the future, such as by
+providing me with reason to invest in a dock for my underused work
+office as a way to make the most of this X270.
+How well does it all fit together?
+
+It is easy to cherish the partnership of a slightly older ThinkPad
+and OpenBSD. The ThinkPad X270 and OpenBSD are both minimalist,
+robust, and customizable. Specifically, the ThinkPad is minimalist
+with regard to features, robust with regard to physical
+durability, and customizable with regard to hardware repairability
+and replaceability. OpenBSD is minimalist with regard to code,
+robust with regard to security, and customizable with regard to
+every aspect of the system. Further, since a healthy number of
+OpenBSD’s developers long have used ThinkPads (to the point that I
+have read some jokes come out of members of their ranks like ‘I
+may use any kind of laptop that I may like, as long as it is a
+ThinkPad’), the operating system works brilliantly on the laptop.
+
+Overall, installing and configuring OpenBSD -current on the
+ThinkPad X270 was the simplest minimalist installation of any
+operating system on any hardware that I ever have done, even
+simpler than Debian GNU/Linux or my beloved FreeBSD (and much
+simpler than a proprietary, dysfunctional operating system such as
+Windows or MacOS). Was the total setup process easier than, say,
+that of a GNU/Linux distribution that uses the Calamares installer
+and comes preconfigured with a huge array of GNU/Linux drivers?
+Well, no, it was not, but that is not the point. OpenBSD is
+secure, nimble, and customizable in an elegantly simple way that
+interoperates smoothly with this small ThinkPad for my mobile
+academic research and writing. Even in this topsy-turvy era in
+which other popular desktop operating systems have many design
+choices for form over function, OpenBSD comes as a serious,
+professional product that is ready to let me focus on my work.
+
+Deus vos benedicat,
+Corey Stephan
+« previous    
+Comments
+
+Terrell Prude' Jr. says:    
+May 13, 2023 at 9:10 am    
+
+Thank you for this post. It’s helped me try updating OpenBSD 7.3
+(freshly installed), on an ODroid H3+, to OpenBSD-current. This
+machine is basically laptop electronics on a 10cm by 10cm square
+motherboard. with a huge heatsink (fan is optional). It works
+great with OpenBSD.
+
+Also, I’d never done an upgrade of OpenBSD before, so when I saw
+this post, I figured, “this is an experiment, so why not try it?”
+It worked perfectly, and I might now be able to use OpenBSD as a
+“daily driver” desktop. I had been using Kubuntu before, and I’ve
+been using OpenBSD as a firewall for years and even giving courses
+on this (I’m a network engineer) before my clients started moving
+to the Cloud.
+
+The one missing piece for OpenBSD as a daily driver was the rather
+arduous (by comparison) upgrade process compared to the GNU/Linux
+distributions. Even Slackware (my favorite) was much easier…until
+“sysupgrade” came along. Man…it is now about a 70% chance that I
+may be using OpenBSD as a daily desktop video-editing operating
+system!
+
+And all thanks to what you posted here. If you should ever doubt
+the value of stuff like this, hopefully you read this note when
+that happens.
+
+Thanks!
+Log in to Reply
+Corey Stephan says:    
+May 14, 2023 at 12:58 pm    
+
+You are welcome. Thank you for writing a thoughtful comment. I
+intend to keep refining and generally updating this tutorial over
+time.
+Log in to Reply
+jeanie marcelle says:    
+August 21, 2023 at 7:06 am    
+
+Hi Corey,
+
+Hi Corey,
+
+Nice post you did here. I bookmarked your post specifically for
+the bible software I can use/install on my OpenBSD system. You
+forgot to mention that the OpenBSD ports is needed to install the
+bible software.
+
+Please look at your script:
+git clone https://github.com/historical-theology/ports-mystuff
+cd ports-mystuff/ && cp -r mystuff/ /usr/ports/mystuff
+cd /usr/ports/mystuff/textproc/bibletime
+make install
+
+It does not do what it is supposed to, I get an error “No such
+file or directory”. Hint: should “&& cp -r mystuff/” not rather
+read “&& cp -r ports-mystuff/” ?
+
+… and possibly the same for :
+git clone https://github.com/historical-theology/ports-mystuff
+cd ports-mystuff/ && cp -r mystuff/ /usr/ports/mystuff
+cd /usr/ports/mystuff/textproc/bibletime
+make install
+
+I am now compiling bibletime…it’s taking forever…(running in a
+virtualbox vm). I am going to make a copy of this VM for backup
+purposes and see what else is broken by installing my ‘stuff’ for
+testing…hopefully nothing is broken.
+
+Still, I LOVE THIS POST YOU MADE. If you have more to post w.r.t.
+OpenBSD I am waiting eagerly.
+
+When I compile Bibletime I get this error and ALL the compile
+operations stop. Have you encountered something like this
+before?:
+
+*** Error 1 in /usr/ports/devel/cmake
+(/usr/ports/infrastructure/mk/bsd.port.mk:3457 ‘wantlib-args’:
+@case X${_DEPENDS_CACHE} in X) _DEPEND…)
+*** Error 2 in /usr/ports/devel/cmake
+(/usr/ports/infrastructure/mk/bsd.port.mk:2140 ‘/usr/ports/pac
+kages/amd64/all/cmake-3.25.2p0v0.tgz’: @…)
+*** Error 2 in /usr/ports/devel/cmake
+(/usr/ports/infrastructure/mk/bsd.port.mk:2621 ‘_internal-pack
+age’: @case X${_DEPENDS_CACHE} in X) _D…)
+*** Error 2 in /usr/ports/devel/cmake
+(/usr/ports/infrastructure/mk/bsd.port.mk:2600 ‘package’: @:; cd
+/usr/ports/devel/cmake && PKGPATH=dev…)
+*** Error 2 in /usr/ports/devel/cmake
+(/usr/ports/infrastructure/mk/bsd.port.mk:2153 ‘/var/db/pkg/cm
+ake-3.25.2p0v0/+CONTENTS’: @cd /usr/port…)
+*** Error 2 in /usr/ports/devel/cmake
+(/usr/ports/infrastructure/mk/bsd.port.mk:2600 ‘install’: @loc
+k=cmake-3.25.2p0v0; export _LOCKS_HELD=…)
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2282
+‘/usr/ports/pobj/bibletime-2.11.2/.d ep-devel-cmake’: @unset
+_DEPENDS_TARGET …)
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2694
+‘/usr/ports/pobj/bibletime-2.11.2/.e xtract_done’: @cd
+/usr/ports/mystuff/tex…)
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2132
+‘/usr/ports/packages/amd64/all/bible time-2.11.2p2.tgz’: @cd
+/usr/ports/mystu…)
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2621
+‘_internal-package’: @case X${_DEPEN DS_CACHE} in X)
+_DEPENDS_CACHE=$( mktem…)
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2600
+‘package’: @:; cd /usr/ports/mystuff /textproc/bibletime &&
+PKGPATH=textproc/…)
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2153
+‘/var/db/pkg/bibletime-2.11.2p2/+CON TENTS’: @cd
+/usr/ports/mystuff/textproc/…)
+*** Error 2 in /usr/ports/mystuff/textproc/bibletime
+(/usr/ports/infrastructure/mk/bsd.port.mk:2600 ‘install’:
+@lock=bibletime-2.11.2p2; ex…)
+Log in to Reply
+Corey Stephan says:    
+August 24, 2023 at 10:41 am    
+
+See my reply below.
+
+I also encourage you to write to misc@openbsd.org, which is
+probably the best place to ask for help from OpenBSD users and
+contributors regarding a minor difficulty of this kind. When you
+think that you have a port that is ready for submission, turn to
+ports@openbsd.org.
+Log in to Reply
+jeanie marcelle says:    
+August 21, 2023 at 8:45 am    
+
+Hi Corey,
+I am struggling to compile Xiphos. There is a file
+‘KJV-2.10.2.zip’ missing from their servers. Do you have this
+file, if so can you send me a download link for it please.
+Log in to Reply
+Corey Stephan says:    
+August 24, 2023 at 10:37 am    
+
+Thank you, Jeanie, for the thoughtful words and helpful
+comments.
+
+BibleTime and Xiphos are still sticking points overall. BibleTime
+is the easier target, since OpenBSD has all of its dependencies
+available natively. I have had it build and run properly a few
+times, but sometimes I, too, face compilation errors that can be
+difficult for me to trace as someone who is not a
+programmer.
+
+I have not looked at either BibleTime or Xiphos for OpenBSD in
+some time. Yet, I certainly will leave your comments in place,
+both in case someone else should wish to approach them and for
+when I have the opportunity to do so again.
+
+Stay tuned, and do not be a stranger.
+
+God bless,
+Corey
+
+P.S. I already had somewhat strict commenting rules for this
+website, but I have had to make them even more strict, since bots
+have been spamming it. Pardon the (slight, I hope)
+inconvenience.
+Log in to Reply
+Pingback: Valuable News – 2023/10/09 | 𝚟𝚎𝚛𝚖𝚊𝚍𝚎𝚗
+
+Leave a Reply
+
+You must be logged in to post a comment.
+© 2023 Corey Stephan, Ph.D.
