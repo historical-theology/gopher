@@ -1,0 +1,103 @@
+Hosting a Gopher Hole on a Raspberry Pi 4 
+via FreeBSD 14 and Gophernicus
+
+December 1, 2023
+Corey Stephan
+
+Previously, I have written about my intentional minimalism in
+design for this website, including my agreement with the
+hyper-minimalist ideas (not the foul language) to be found in the
+Suckless Project’s webpage “The Web Sucks.” Also, I have written
+about how simple the installation and configuration of FreeBSD on
+a Raspberry Pi 4 became with the arrival of FreeBSD 13-RELEASE, as
+well as how easy FreeBSD is to use on a Raspberry Pi as a
+low-powered homelab. Early last month (November 2023), I decided
+to merge these two ideas by mirroring my professional website,
+www.coreystephan.com, as a Gopher hole on my Raspberry Pi 4
+running FreeBSD 14 with the address
+gopher://coreystephan.duckdns.org.
+
+Gopher is the alternative to the modern Web that the Suckless team
+recommends. Developed at the University of Minnesota— that is, in
+the heart of my dear home state—and first released in 1991, the
+Gopher protocol allows the distribution and digestion of text.
+Unlike the World Wide Web of the 2020s, Gopher has nothing to do
+with “apps” or, arguably worse, several hundred megabyte,
+must-be-downloaded graphical billboards masquerading as useful
+documents. Gopher is for people who long for the professional
+websites and clever blogs of the 1990s through early 2000s.
+
+Even as a newcomer to the Gopherspace, after only half a dozen
+hours of work scattered across the past few weeks, I now have
+gopher://coreystephan.duckdns.org ready for visits in any Gopher
+client. The process has been painless—and refreshingly so,
+relative even to managing www.coreystephan.com, which I at least
+have made less painful to manage than it could be as a 2020s
+website with TLS and comment sections.
+
+With a fresh installation of FreeBSD, this is all that is required
+to start hosting a Gopher server:
+
+* Install the “small and secure Gopher server” Gophernicus with `pkg
+install gophernicus`
+* Append the following line to (presumably, the bottom of)
+`/rc/inetd.conf` to enable Gophernicus:
+`gopher stream tcp46 nowait nobody /usr/local/sbin/gophernicus
+gophernicus [options]``
+* Restart inetd(8) with `service inetd restart`
+
+For the full list of options (flags) that are available in
+Gophernicus, type `gophernicus --help`. There are two flags that I
+consider to be necessary (in the strictest sense). First, `-h [url]`
+allows specifying the hostname. Second, `-o UTF-8` overrides the
+default character set with Unicode, thereby allowing the server to
+host special, non-Latin characters, including polytonic Greek (and
+emoticons). For now, then, my full /rc/inetd.conf entry for the
+Gopher server is this simple (as one line):
+
+`gopher stream tcp46 nowait nobody /usr/local/sbin/gophernicus
+gophernicus -h coreystephan.duckdns.org -o UTF-8`
+
+Gopher defaults to port 70. Gophernicus allows one to choose any
+port that one might like, but clients tend to try to access
+default ports for Internet services automatically. Accordingly, I
+have allowed Gophernicus to use the default port, and I have
+forwarded all WAN calls for port 70 from my SOHO router+firewall
+that runs the free and open source firmware OpenWRT to my
+Raspberry Pi.
+
+Piecing together an orderly, pleasant Gopher hole is barely more
+complicated than enabling Gophernicus inside FreeBSD. The best
+place to begin is gopher://gopher.floodgap.com, which contains a
+brilliant “Getting started with gopher, software, and more” page
+that links, among many useful places, to a “Toybox” that explains
+exactly how to setup a Gopher hole with tangible examples. I keep
+my own hole’s source code up-to-date at
+github.com/historical-theology/gopher.
+
+The best place to start organizing a Gopher hole is with the
+landing/root “gophermap.” A Gopher hole’s main gophermap is
+equivalent to the “index.html” webpage of a website, that is, the
+homepage that directs a visitor to all the website’s other
+webpages. The floodgap “Toybox” contains a small sample gophermap
+with everything that one might need in order to configure his/her
+own, and the source code for my Gopher hole on GitHub shows how I
+have my own gophermaps (plural) configured (one as the homepage,
+one as the index for my phlog, and so on).
+
+Finally, for the reader who is brand new to the Gopherspace, I
+share a few common equivalencies between the World Wide Web and
+Gopher. After all, knowing a hobby’s most basic jargon tends to be
+helpful when first entering into it.
+
+World Wide Web (WWW) (Protocol) |   Gopher (Gopherspace)
+Website                         |   Gopher hole
+homepage / index.html           |   gophermap
+Blog (Web log)                  |   Phlog (Gopher log)
+http(s)://                      |   gopher://
+Ports 80 (http) & 443 (https)   |   Port 70
+
+With that, it is time for me to resume diving into Gopher holes.
+
+Deus vos benedicat,
+Corey Stephan

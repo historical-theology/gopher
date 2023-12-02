@@ -16,6 +16,16 @@ related matters
          __ejm\___/________dwb`---`_______________________________
 
 
+0Hosting a Gopher Hole on a Raspberry Pi 4 via FreeBSD 14	/stuff/phlog/gopher-freebsd
+and Gophernicus
+
+Previously, I have written about my intentional minimalism in
+design for this website, including my agreement with the
+hyper-minimalist ideas (not the foul language) to be found in the
+Suckless Project’s webpage “The Web Sucks.” Also, I have written
+about how simple the installation and configuration of FreeBSD on
+a Raspberry Pi 4 became with […]
+
 0OpenBSD 7.3 on a ThinkPad X270 (plus my Theological Dotfiles)	/stuff/phlog/openbsd-thinkpad
 for Scholarly Work
 
