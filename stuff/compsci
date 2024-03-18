@@ -28,19 +28,28 @@ contributed to the FreeBSD Wiki,
 and given various presentations about topics related to 
 software freedom. 
 
-Three noteworthy presentations of the kind are 
+Four noteworthy presentations of the kind are 
 the talk that I delivered at the 2021 Free and Open Source 
 Developers European Meeting (FOSDEM) on how to optimize 
 multisource historical research with tiling window managers, 
 my October 2021 FreeBSD Friday lecture 
 “The Writing Scholar’s Guide to FreeBSD,” 
 and my lecture at BSD Canada 2023 (BSDCan) that was titled 
-“BSD for Researching, Writing, and Teaching the Liberal Arts.”
+“BSD for Researching, Writing, and Teaching the Liberal Arts,”
+and my upcoming lecture at BSDCan 2024 that will be titled
+"Summa Tetraodontidae [Summa of the Pufferfish]:
+Thomas Aquinas Explores OpenBSD's Medieval Orderliness."
 
 I maintain a custom desktop configuration, which I call 
 “Theological Dotfiles,” for efficient multi-source research and 
-writing in *BSD or GNU/Linux. I love computer building, and I 
-used to use a home-built desktop computer for most of my work. 
+writing in *BSD or GNU/Linux. I originally wrote the dotfiles 
+for use with spectrwm, but I currently use them with 
+“Theology WM,” which is my own custom build of the 
+suckless project’s dynamic window manager (dwm) 
+([phlog post pending).
+
+I love computer building, and I used to use a
+home-built desktop computer for most of my work. 
 After making a recent cross-country move, however, 
 before which it made the most sense for me to sell my desktop 
 computer hardware, I now use a docked ThinkPad T590 while at my 
@@ -56,6 +65,11 @@ other office software; spectrwm, i3wm, Openbox, and other
 window managers; XFCE, LXQt, and other desktop environments; 
 and a range of other open source tools for desktop work.
 
+I am fond of the LaTeX typesetting language. Specifically, 
+I enjoy the TeX Live distribution with Texmaker as my current 
+cross-platform GUI front-end of choice for preparing both 
+personal and professional documents.
+
 In each of 10 summers, I lead and co-taught 
 Build Your Own Computer Camp for middle school students 
 at my alma mater, Marshall School in Duluth, Minnesota.
@@ -68,6 +82,6 @@ and blog (/stuff/blog/).
 
 __________________________________________________________________
 
-Updated on November 7, 2023.
+Updated on March 18, 2024.
 
-© 2023 Corey Stephan, Ph.D.
+© 2024 Corey Stephan, Ph.D.
