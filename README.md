@@ -1,3 +1,5 @@
+! March 25, 2026 - wholesale move and rework in progress, currently out-of-date !
+
 This is a gopher hole that contains most of the same contents as my professional website (coreystephan.com). 
 
 You may find it at 
