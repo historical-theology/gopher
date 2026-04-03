@@ -16,6 +16,26 @@ related matters
          __ejm\___/________dwb`---`_______________________________
 
 
+0My 2025-2026 Lecture Series	/stuff/phlog/cecilia-series
+“Whimsically Encountering the Fathers of Mother Church”
+
+I am pleased to announce that I will be delivering a 2025-2026
+series of lectures at my current home parish, St. Cecilia
+Catholic Church in Houston, titled “Whimsically Encountering the
+Fathers of Mother Church: Ancient Voices, Modern Hearts.”
+
+In each talk, I will bridge the academic and the devotional by
+letting the Fathers themselves take charge.
+
+0Void Linux with dwl:	/stuff/phlog/void-dwl
+Minimalist Wayland (on a ThinkPad) for Daily Academic Work
+
+This tutorial (for lack of a better name) is an expanded and
+polished form of my personal notes on how to install Void Linux
+and configure my build of dwl (“dwm for Wayland”) on a Lenovo
+ThinkPad. I hope that this blog post will help at least one other
+person configure Void Linux for mobile research and writing.
+
 0Sancta Missa: The Catholic husband and father’s	/stuff/phlog/sancta-missa
 typical Sunday morning experience (Fun Post)
 
@@ -24,7 +44,6 @@ long-form blog posts in favor of a playful, short one.
 
 Prepare breakfast for the children. Do not prepare 
 breakfast for yourself. You are supposed to fast...
-
 
 0Hosting a Gopher Hole on a Raspberry Pi 4 via FreeBSD 14	/stuff/phlog/gopher-freebsd
 and Gophernicus
