@@ -13,7 +13,6 @@ IPicture	/stuff/faculty-pic-small.jpg
 __/Index\_________________________________________________________
 
 0CV	/stuff/cv
-0Publications	/stuff/publications
 1Teaching	/stuff/teaching/
 1Phlog	/stuff/phlog/
 0Academia	/stuff/academia
@@ -41,6 +40,7 @@ I live with my wife, son, and daughter in Katy, Texas.
 __/WWW\___________________________________________________________
 
 hGitHub	URL:https://www.github.com/historical-theology/ 
+hCodeberg	URL:https://codeberg.org/coreystephan
 hOdysee	URL:https://www.odysee.com/@CoreyStephanPh.D.:c/
 hUpwork	URL:https://www.upwork.com/freelancers/~01269fb6a661898640/
 
@@ -50,4 +50,4 @@ __________________________________________________________________
 
 © 2026 Corey Stephan, Ph.D. 
 
-4 April 2026 - Gopher hole updated
+5 April 2026 - Gopher hole updated
