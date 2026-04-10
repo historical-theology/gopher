@@ -19,19 +19,7 @@ I am a proud advocate of free and open source software (FOSS),
 especially its implementation in academia. To that end, I have
 written articles for the FreeBSD Journal, contributed to the
 FreeBSD Wiki, and given various presentations about topics
-related to software freedom. Five noteworthy presentations of the
-kind are the talk that I delivered at the 2021 Free and Open
-Source Developers European Meeting (FOSDEM) on how to optimize
-multisource historical research with tiling window managers, my
-October 2021 FreeBSD Friday lecture “The Writing Scholar’s Guide
-to FreeBSD,” my lecture at BSD Canada 2023 (BSDCan) that was
-titled “BSD for Researching, Writing, and Teaching the Liberal
-Arts,” my BSDCan 2024 lecture that was titled “Summa
-Tetraodontidae [Summa of the Pufferfish]: Thomas Aquinas Explores
-OpenBSD’s Medieval Orderliness,” and my upcoming BSDCan 2026
-lecture that will be titled “Escaping Plato’s Cave with Software
-Freedom: A Classical Greek Symposium with Fred, Puffy, and
-Beastie.”
+related to software freedom.
 
 For the duration of the year 2021, I was part of a competitive
 InfoSec networking and cybersecurity training grant cohort with
@@ -46,7 +34,8 @@ dotfiles for use with spectrwm, but eventually I pivoted to using
 them with “Theology WM,” which is my own custom build of the
 suckless project’s dynamic window manager (dwm). Now, I use a
 custom build of dwl (a recreation of dwm on Wayland) with the
-Dracula colorscheme.
+Dracula colorscheme. Now, I use mangowm, which is based on dwl, 
+with the same setup.
 
 I have multi-year experience with Unix-like operating systems,
 including FreeBSD, OpenBSD, and GNU/Linux (especially Debian and
@@ -60,7 +49,7 @@ managers; XFCE, LXQt, and other desktop environments; and a range
 of other open source tools for desktop work.
 
 I am fond of the LaTeX typesetting language. Specifically, I
-enjoy the TeX Live distribution with Texmaker as my current
+enjoy the TeX Live distribution with TeXstudio as my current
 cross-platform GUI front-end of choice for preparing both
 personal and professional documents.
 
@@ -70,13 +59,8 @@ Marshall School in Duluth, Minnesota.
 
 I hold an FCC amateur radio General class license with the
 (vanity) callsign N7CJS.
-
-Also see my GitHub profile (github.com/historical-theology), 
-stand-alone publication record (/stuff/publications), 
-and blog (/stuff/blog/).
-
 __________________________________________________________________
 
-Updated on February 1, 2026.
+Updated on 9 April 2026
 
-© 2024 Corey Stephan, Ph.D.
+© 2026 Corey Stephan, Ph.D.
