@@ -1,4 +1,4 @@
-Hosting a Gopher Hole on a Raspberry Pi 4 
+Hosting on a Raspberry Pi 4 
 via FreeBSD 14 and Gophernicus
 
 December 1, 2023
@@ -13,7 +13,7 @@ a Raspberry Pi 4 became with the arrival of FreeBSD 13-RELEASE, as
 well as how easy FreeBSD is to use on a Raspberry Pi as a
 low-powered homelab. Early last month (November 2023), I decided
 to merge these two ideas by mirroring my professional website,
-www.coreystephan.com, as a Gopher hole on my Raspberry Pi 4
+www.coreystephan.com, as a gopherhole on my Raspberry Pi 4
 running FreeBSD 14 with the address
 gopher://coreystephan.duckdns.org.
 
@@ -66,22 +66,22 @@ forwarded all WAN calls for port 70 from my SOHO router+firewall
 that runs the free and open source firmware OpenWRT to my
 Raspberry Pi.
 
-Piecing together an orderly, pleasant Gopher hole is barely more
+Piecing together an orderly, pleasant gopherhole is barely more
 complicated than enabling Gophernicus inside FreeBSD. The best
 place to begin is gopher://gopher.floodgap.com, which contains a
 brilliant “Getting started with gopher, software, and more” page
 that links, among many useful places, to a “Toybox” that explains
-exactly how to setup a Gopher hole with tangible examples. I keep
+exactly how to setup a gopherhole with tangible examples. I keep
 my own hole’s source code up-to-date at
 github.com/historical-theology/gopher.
 
-The best place to start organizing a Gopher hole is with the
-landing/root “gophermap.” A Gopher hole’s main gophermap is
+The best place to start organizing a gopherhole is with the
+landing/root “gophermap.” A gopherhole’s main gophermap is
 equivalent to the “index.html” webpage of a website, that is, the
 homepage that directs a visitor to all the website’s other
 webpages. The floodgap “Toybox” contains a small sample gophermap
 with everything that one might need in order to configure his/her
-own, and the source code for my Gopher hole on GitHub shows how I
+own, and the source code for my gopherhole on GitHub shows how I
 have my own gophermaps (plural) configured (one as the homepage,
 one as the index for my phlog, and so on).
 
@@ -91,13 +91,16 @@ Gopher. After all, knowing a hobby’s most basic jargon tends to be
 helpful when first entering into it.
 
 World Wide Web (WWW)            |   Gopher (Gopherspace)
-Website                         |   Gopher hole
+Website                         |   gopherhole
 homepage / index.html           |   gophermap
 Blog (Web log)                  |   Phlog (Gopher log)
 http(s)://                      |   gopher://
 Ports 80 (http) & 443 (https)   |   Port 70
 
-With that, it is time for me to resume diving into Gopher holes.
+With that, it is time for me to resume diving into gopherholes.
 
 Deus vos benedicat,
 Corey Stephan
+
+Changelog
+April 5, 2026 - minor edits
