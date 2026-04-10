@@ -34,19 +34,15 @@ dotfiles for use with spectrwm, but eventually I pivoted to using
 them with “Theology WM,” which is my own custom build of the
 suckless project’s dynamic window manager (dwm). Now, I use a
 custom build of dwl (a recreation of dwm on Wayland) with the
-Dracula colorscheme. Now, I use mangowm, which is based on dwl, 
-with the same setup.
+Dracula colorscheme. Now, I use mangowm, which is based on dwl.
 
 I have multi-year experience with Unix-like operating systems,
 including FreeBSD, OpenBSD, and GNU/Linux (especially Debian and
-Manjaro), as well as some shell scripting. See, for example, this
-blog post for a guide to how I like to configure OpenBSD with
-spectrwm on a Lenovo ThinkPad or this blog post for a guide to
-how I like to configure Void Linux with dwl on the same. I also
-have strong familiarity with Zotero, LibreOffice, and other
-office software; spectrwm, i3wm, Openbox, and other window
-managers; XFCE, LXQt, and other desktop environments; and a range
-of other open source tools for desktop work.
+Manjaro), as well as some shell scripting. See, for example, 
+[this phlog post] for a guide to how I like to configure OpenBSD 
+with spectrwm on a Lenovo ThinkPad or [another phlog post] 
+for a guide to how I like to configure Void Linux with dwl 
+on the same.
 
 I am fond of the LaTeX typesetting language. Specifically, I
 enjoy the TeX Live distribution with TeXstudio as my current
