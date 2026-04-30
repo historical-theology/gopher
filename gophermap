@@ -13,11 +13,16 @@ IPicture	/stuff/faculty-pic-small.jpg
    _____
 __/Index\_________________________________________________________
 
-0CV	/stuff/cv
-1Teaching	/stuff/teaching/
 1Phlog	/stuff/phlog/
+
+Interests
 0Academia	/stuff/academia
 0CompSci	/stuff/compsci
+
+1Teaching	/stuff/teaching/
+
+0CV	/stuff/cv
+
 0Contact	/stuff/contact
    _____
 __/About\_________________________________________________________
@@ -26,7 +31,7 @@ Broadly, I study patristics and the theology of the Latin Middle
 Ages and Greek Byzantium. My research topics include Greek
 patristic Christology and cosmology, plus their Latin Scholastic
 reception. I am the author of 
-hMaximus the Confessor’s Thomistic Legacy	https://utpdistribution.com/9780888442444/maximus-the-confessors-thomistic-legacy/
+hMaximus the Confessor’s Thomistic Legacy	https://pims.ca/publication/isbn-978-0-88844-244-4/
 (Pontifical Institute of Mediaeval Studies: Toronto, 2026). 
 
 Fueled by a Catholic desire to see humanity flourish with new
@@ -44,4 +49,4 @@ __________________________________________________________________
 
 © 2026 Corey Stephan, Ph.D. 
 
-9 April 2026 - Gopher hole updated
+30 April 2026 - Gopher hole updated
